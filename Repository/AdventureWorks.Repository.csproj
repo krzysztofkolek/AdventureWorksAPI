@@ -56,6 +56,9 @@
   <ItemGroup>
     <Compile Include="DI\CustomInterceptor.cs" />
     <Compile Include="DI\InterceptorInstaller.cs" />
+    <Compile Include="Main\BaseRepository.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Main\IEditableRepository.cs" />
     <Compile Include="DI\Installers.cs" />
     <Compile Include="Main\IReadWriteRepository.cs" />
