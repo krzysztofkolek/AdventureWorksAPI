@@ -1,10 +1,10 @@
 ﻿namespace AdventureWorks.Repository.dbo
 {
-    using EntityClasses.dbo;
+    using EntityClasses.HumanResources;
     using Main;
 
     public class EmployeeRepository<T> : IRepository<T>, IEditableRepository<T>
-        where T : AwbuildVersion, new()
+        where T : Employee, new()
     {
         public System.Linq.IQueryable<T> SearchFor(System.Linq.Expressions.Expression<System.Func<T, bool>> predicate)
         {
