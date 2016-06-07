@@ -1,43 +1,34 @@
 ﻿namespace AdventureWorks.Repository.dbo
 {
-    using System.Collections.Generic;
-    using System.Linq;
     using EntityClasses.Production;
     using Main;
-    using NHibernate;
-    using NHibernate.Linq;
 
-    public class ProductRepository<T> : IRepository<T>, IEditableRepository<T>
+    public class ProductRepository<T> : BaseRepository<T>, IRepository<T>, IEditableRepository<T>
         where T : Product, new()
     {
-        public System.Linq.IQueryable<T> SearchFor(System.Linq.Expressions.Expression<System.Func<T, bool>> predicate)
+        public System.Collections.Generic.IList<T> SearchFor(System.Linq.Expressions.Expression<System.Func<T, bool>> predicate)
         {
-            throw new System.NotImplementedException();
+            return BaseSearchFor(predicate);
         }
 
-        public System.Linq.IQueryable<T> GetAll()
+        public System.Collections.Generic.IList<T> GetAll()
         {
-            using (ISession sessionTest = SessionManager.OpenSession())
-            {
-                IList<Product> books = sessionTest.CreateCriteria(typeof(Product)).List<Product>();
-                IList<Product> books345t78 = sessionTest.Query<Product>().ToList();
-            }
-            return null;
+            return BaseGetAll();
         }
 
         public T GetById(int id)
         {
-            throw new System.NotImplementedException();
+            return BaseGetById(id);
         }
 
         public void Insert(T entity)
         {
-            throw new System.NotImplementedException();
+            BaseInsert(entity);
         }
 
         public void Delete(T entity)
         {
-            throw new System.NotImplementedException();
+            BaseDelete(entity);
         }
     }
 }
