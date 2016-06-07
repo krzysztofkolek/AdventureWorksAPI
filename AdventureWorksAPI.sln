@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventureWorks.Model", "Model\AdventureWorks.Model.csproj", "{2B4644A3-C06D-4520-AD71-593676B79212}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventureWorks.Persistence", "Persistence\AdventureWorks.Persistence.csproj", "{499EA561-868E-4D48-84DF-E0255C7BBB71}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2B4644A3-C06D-4520-AD71-593676B79212}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B4644A3-C06D-4520-AD71-593676B79212}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B4644A3-C06D-4520-AD71-593676B79212}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B4644A3-C06D-4520-AD71-593676B79212}.Release|Any CPU.Build.0 = Release|Any CPU
+		{499EA561-868E-4D48-84DF-E0255C7BBB71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{499EA561-868E-4D48-84DF-E0255C7BBB71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{499EA561-868E-4D48-84DF-E0255C7BBB71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{499EA561-868E-4D48-84DF-E0255C7BBB71}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
