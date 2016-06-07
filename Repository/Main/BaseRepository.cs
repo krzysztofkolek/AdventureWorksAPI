@@ -7,7 +7,7 @@
 
     public abstract class BaseRepository<T>
     {
-        public virtual System.Collections.Generic.IList<T> BaseSearchFor(System.Linq.Expressions.Expression<System.Func<T, bool>> predicate)
+        protected virtual System.Collections.Generic.IList<T> BaseSearchFor(System.Linq.Expressions.Expression<System.Func<T, bool>> predicate)
         {
             using (ISession session = SessionManager.OpenSession())
             {
@@ -15,7 +15,7 @@
             }
         }
 
-        public virtual System.Collections.Generic.IList<T> BaseGetAll()
+        protected virtual System.Collections.Generic.IList<T> BaseGetAll()
         {
             using (ISession session = SessionManager.OpenSession())
             {
@@ -23,7 +23,7 @@
             }
         }
 
-        public virtual T BaseGetById(int id)
+        protected virtual T BaseGetById(int id)
         {
             using (ISession session = SessionManager.OpenSession())
             {
@@ -31,7 +31,7 @@
             }
         }
 
-        public virtual void BaseInsert(T entity)
+        protected virtual void BaseInsert(T entity)
         {
             using (ISession session = SessionManager.OpenSession())
             {
@@ -39,7 +39,7 @@
             }
         }
 
-        public virtual void BaseDelete(T entity)
+        protected virtual void BaseDelete(T entity)
         {
             using (ISession session = SessionManager.OpenSession())
             {
