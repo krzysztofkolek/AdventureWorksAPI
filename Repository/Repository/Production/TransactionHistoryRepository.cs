@@ -3,32 +3,32 @@
     using EntityClasses.Production;
     using Main;
 
-    public class TransactionHistoryRepository<T> : IRepository<T>, IEditableRepository<T>
+    public class TransactionHistoryRepository<T> : BaseRepository<T>,  IRepository<T>, IEditableRepository<T>
         where T : TransactionHistory, new()
     {
         public System.Collections.Generic.IList<T> SearchFor(System.Linq.Expressions.Expression<System.Func<T, bool>> predicate)
         {
-            throw new System.NotImplementedException();
+            return BaseSearchFor(predicate);
         }
 
         public System.Collections.Generic.IList<T> GetAll()
         {
-            throw new System.NotImplementedException();
+            return BaseGetAll();
         }
 
         public T GetById(int id)
         {
-            throw new System.NotImplementedException();
+            return BaseGetById(id);
         }
 
         public void Insert(T entity)
         {
-            throw new System.NotImplementedException();
+            BaseInsert(entity);
         }
 
         public void Delete(T entity)
         {
-            throw new System.NotImplementedException();
+            BaseDelete(entity);
         }
     }
 }
