@@ -1,53 +1,130 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-	<PropertyGroup>
-		<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-		<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-		<ProjectGuid>b341bfce-1683-4305-92a5-7594b5e80b7c</ProjectGuid>
-		<OutputType>Library</OutputType>
-		<AppDesignerFolder>Properties</AppDesignerFolder>
-		<RootNamespace>AdventureWorks.Repository</RootNamespace>
-		<AssemblyName>AdventureWorks.Repository</AssemblyName>
-		<TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
-		<FileAlignment>512</FileAlignment>
-	</PropertyGroup>
-	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-		<DebugSymbols>true</DebugSymbols>
-		<DebugType>full</DebugType>
-		<Optimize>false</Optimize>
-		<OutputPath>bin\Debug\</OutputPath>
-		<DefineConstants>DEBUG;TRACE</DefineConstants>
-		<ErrorReport>prompt</ErrorReport>
-		<WarningLevel>4</WarningLevel>
-	</PropertyGroup>
-	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-		<DebugType>pdbonly</DebugType>
- 		<Optimize>true</Optimize>
-		<OutputPath>bin\Release\</OutputPath>
-		<DefineConstants>TRACE</DefineConstants>
-		<ErrorReport>prompt</ErrorReport>
-		<WarningLevel>4</WarningLevel>
-	</PropertyGroup>
-	<ItemGroup>
-		<Reference Include="System"/>
-		
-		<Reference Include="System.Core"/>
-		<Reference Include="System.Xml.Linq"/>
-		<Reference Include="System.Data.DataSetExtensions"/>
-		
-		
-		<Reference Include="Microsoft.CSharp"/>
- 		
-		<Reference Include="System.Data"/>
-		<Reference Include="System.Xml"/>
-	</ItemGroup>
-	<ItemGroup>
-		<Compile Include="Class1.cs" />
-
-		<Compile Include="Properties\AssemblyInfo.cs" />
-	</ItemGroup>
-	<Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{003DBC63-DDA6-47F3-863E-73B040D7DBA4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AdventureWorks.Repository</RootNamespace>
+    <AssemblyName>AdventureWorks.Repository</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main\IEditableRepository.cs" />
+    <Compile Include="Main\IReadWriteRepository.cs" />
+    <Compile Include="Main\IRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\dbo\ErrorLogRepository.cs" />
+    <Compile Include="Repository\dbo\AwbuildVersionRepository.cs" />
+    <Compile Include="Repository\dbo\DatabaseLogRepository.cs" />
+    <Compile Include="Repository\HumanResources\DepartmentRepository.cs" />
+    <Compile Include="Repository\HumanResources\EmployeeRepository.cs" />
+    <Compile Include="Repository\HumanResources\EmployeeAddressRepository.cs" />
+    <Compile Include="Repository\HumanResources\EmployeeDepartmentHistoryRepository.cs" />
+    <Compile Include="Repository\HumanResources\EmployeePayHistoryRepository.cs" />
+    <Compile Include="Repository\HumanResources\JobCandidateRepository.cs" />
+    <Compile Include="Repository\HumanResources\ShiftRepository.cs" />
+    <Compile Include="Repository\Person\AddressRepository.cs" />
+    <Compile Include="Repository\Person\AddressTypeRepository.cs" />
+    <Compile Include="Repository\Person\ContactRepository.cs" />
+    <Compile Include="Repository\Person\ContactTypeRepository.cs" />
+    <Compile Include="Repository\Person\CountryRegionRepository.cs" />
+    <Compile Include="Repository\Person\StateProvinceRepository.cs" />
+    <Compile Include="Repository\Production\BillOfMaterialRepository.cs" />
+    <Compile Include="Repository\Production\CultureRepository.cs" />
+    <Compile Include="Repository\Production\DocumentRepository.cs" />
+    <Compile Include="Repository\Production\IllustrationRepository.cs" />
+    <Compile Include="Repository\Production\LocationRepository.cs" />
+    <Compile Include="Repository\Production\ProductRepository.cs" />
+    <Compile Include="Repository\Production\ProductCategoryRepository.cs" />
+    <Compile Include="Repository\Production\ProductCostHistoryRepository.cs" />
+    <Compile Include="Repository\Production\ProductDescriptionRepository.cs" />
+    <Compile Include="Repository\Production\ProductDocumentRepository.cs" />
+    <Compile Include="Repository\Production\ProductInventoryRepository.cs" />
+    <Compile Include="Repository\Production\ProductListPriceHistoryRepository.cs" />
+    <Compile Include="Repository\Production\ProductModelRepository.cs" />
+    <Compile Include="Repository\Production\ProductModelIllustrationRepository.cs" />
+    <Compile Include="Repository\Production\ProductModelProductDescriptionCultureRepository.cs" />
+    <Compile Include="Repository\Production\ProductPhotoRepository.cs" />
+    <Compile Include="Repository\Production\ProductProductPhotoRepository.cs" />
+    <Compile Include="Repository\Production\ProductReviewRepository.cs" />
+    <Compile Include="Repository\Production\ProductSubcategoryRepository.cs" />
+    <Compile Include="Repository\Production\ScrapReasonRepository.cs" />
+    <Compile Include="Repository\Production\TransactionHistoryRepository.cs" />
+    <Compile Include="Repository\Production\TransactionHistoryArchiveRepository.cs" />
+    <Compile Include="Repository\Production\UnitMeasureRepository.cs" />
+    <Compile Include="Repository\Production\WorkOrderRepository.cs" />
+    <Compile Include="Repository\Production\WorkOrderRoutingRepository.cs" />
+    <Compile Include="Repository\Purchasing\ProductVendorRepository.cs" />
+    <Compile Include="Repository\Purchasing\PurchaseOrderDetailRepository.cs" />
+    <Compile Include="Repository\Purchasing\PurchaseOrderHeaderRepository.cs" />
+    <Compile Include="Repository\Purchasing\ShipMethodRepository.cs" />
+    <Compile Include="Repository\Purchasing\VendorRepository.cs" />
+    <Compile Include="Repository\Purchasing\VendorAddressRepository.cs" />
+    <Compile Include="Repository\Purchasing\VendorContactRepository.cs" />
+    <Compile Include="Repository\Sales\ContactCreditCardRepository.cs" />
+    <Compile Include="Repository\Sales\CountryRegionCurrencyRepository.cs" />
+    <Compile Include="Repository\Sales\CreditCardRepository.cs" />
+    <Compile Include="Repository\Sales\CurrencyRepository.cs" />
+    <Compile Include="Repository\Sales\CurrencyRateRepository.cs" />
+    <Compile Include="Repository\Sales\CustomerRepository.cs" />
+    <Compile Include="Repository\Sales\CustomerAddressRepository.cs" />
+    <Compile Include="Repository\Sales\IndividualRepository.cs" />
+    <Compile Include="Repository\Sales\SalesOrderDetailRepository.cs" />
+    <Compile Include="Repository\Sales\SalesOrderHeaderRepository.cs" />
+    <Compile Include="Repository\Sales\SalesOrderHeaderSalesReasonRepository.cs" />
+    <Compile Include="Repository\Sales\SalesPersonRepository.cs" />
+    <Compile Include="Repository\Sales\SalesPersonQuotaHistoryRepository.cs" />
+    <Compile Include="Repository\Sales\SalesReasonRepository.cs" />
+    <Compile Include="Repository\Sales\SalesTaxRateRepository.cs" />
+    <Compile Include="Repository\Sales\SalesTerritoryRepository.cs" />
+    <Compile Include="Repository\Sales\SalesTerritoryHistoryRepository.cs" />
+    <Compile Include="Repository\Sales\ShoppingCartItemRepository.cs" />
+    <Compile Include="Repository\Sales\SpecialOfferRepository.cs" />
+    <Compile Include="Repository\Sales\SpecialOfferProductRepository.cs" />
+    <Compile Include="Repository\Sales\StoreRepository.cs" />
+    <Compile Include="Repository\Sales\StoreContactRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Model\AdventureWorks.Model.csproj">
+      <Project>{2b4644a3-c06d-4520-ad71-593676b79212}</Project>
+      <Name>AdventureWorks.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Persistence\AdventureWorks.Persistence.csproj">
+      <Project>{499ea561-868e-4d48-84df-e0255c7bbb71}</Project>
+      <Name>AdventureWorks.Persistence</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
@@ -55,5 +132,4 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-
- </Project>
+</Project>
