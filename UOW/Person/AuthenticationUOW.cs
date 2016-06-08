@@ -11,8 +11,8 @@ namespace AdventureWorks.UOW.Person
     public static class AuthenticationUOW
     {
         private static ContactRepository<Contact> _contactRepository = new ContactRepository<Contact>();
-
-        public static AuthenticationUOWModel ValidateNonHashedPassword(string username, string password)
+        
+        public static AuthenticationUOWModel ValidateHashedPassword(string username, string password)
         {
             var dbUser = _contactRepository.SearchFor(x => x.EmailAddress == username).FirstOrDefault();
             if (dbUser != null)
@@ -24,12 +24,14 @@ namespace AdventureWorks.UOW.Person
                     return new AuthenticationUOWModel()
                     {
                         UserName = username,
-                        Claims = new List<String>() {""}
+                        Claims = new List<String>() { "" }
                     };
                 }
             }
             return null;
         }
+
+
 
         private static string MD5(string password)
         {

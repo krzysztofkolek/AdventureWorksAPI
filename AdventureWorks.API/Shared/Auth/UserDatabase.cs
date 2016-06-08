@@ -7,7 +7,7 @@
     {
         public static IUserIdentity ValidateUser(string userName, string password)
         {
-            return new CustomUserIdentity(new GetUserIfCorectForNonHashedPasswordUOW().GetResult());
+            return new CustomUserIdentity(new GetUserIfCorectForHashedPasswordUOW().GetResult());
         }
     }
 }

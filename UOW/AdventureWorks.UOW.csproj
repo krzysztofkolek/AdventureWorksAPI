@@ -52,7 +52,7 @@
     </Compile>
     <Compile Include="Main\BaseUOW.cs" />
     <Compile Include="Person\AuthenticationUOW.cs" />
-    <Compile Include="Person\GetUserIfCorectForNonHashedPasswordUOW.cs" />
+    <Compile Include="Person\GetUserIfCorectForHashedPasswordUOW.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
