@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace AdventureWorks.UOW
 {
     using Castle.Core;
+    using EntityClasses.Person;
     using EntityClasses.Production;
     using Repository.DI;
     using Repository.Main;
@@ -22,10 +23,10 @@ namespace AdventureWorks.UOW
         //}
 
         public void GetTest()
-        {
-            var test = new RepositoryFactory<Product>().GetRepository().GetAll();
-            var test1 = new RepositoryFactory<Product>().GetRepository().GetAll();
-            var test2 = new RepositoryFactory<Product>().GetRepository().GetAll();
+        { 
+            var test1 = new RepositoryFactory<Contact>().GetRepository().GetAll(); 
+
+             
         }
     }
 }

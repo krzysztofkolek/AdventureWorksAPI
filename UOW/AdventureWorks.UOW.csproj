@@ -50,6 +50,9 @@
     <Compile Include="Class1.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Main\BaseUOW.cs" />
+    <Compile Include="Person\AuthenticationUOW.cs" />
+    <Compile Include="Person\GetUserIfCorectForNonHashedPasswordUOW.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -61,9 +64,20 @@
       <Project>{003dbc63-dda6-47f3-863e-73b040d7dba4}</Project>
       <Name>AdventureWorks.Repository</Name>
     </ProjectReference>
+    <ProjectReference Include="..\UOW.Model\AdventureWorks.UOW.Model.csproj">
+      <Project>{fe7b9c20-9998-4cfe-aed8-0a13a47f6d83}</Project>
+      <Name>AdventureWorks.UOW.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="dbo\" />
+    <Folder Include="HumanResources\" />
+    <Folder Include="Production\" />
+    <Folder Include="Purchasing\" />
+    <Folder Include="Sales\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

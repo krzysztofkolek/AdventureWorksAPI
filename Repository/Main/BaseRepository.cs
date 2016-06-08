@@ -35,7 +35,11 @@
         {
             using (ISession session = SessionManager.OpenSession())
             {
-                session.SaveOrUpdate(entity);
+                using (ITransaction transaction = session.BeginTransaction())
+                {
+                    session.SaveOrUpdate(entity);
+                    transaction.Commit();
+                }
             }
         }
 
