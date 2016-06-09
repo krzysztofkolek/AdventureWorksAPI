@@ -1,6 +1,7 @@
 ﻿namespace AdventureWorks.UOW.DI
 {
     using Castle.MicroKernel.Registration;
+    using Castle.Windsor.Installer;
     using Person;
 
     public class Installers: IWindsorInstaller
@@ -11,7 +12,7 @@
 
             container
                 .Register(Component.For<IAuthenticationUow>().ImplementedBy<AuthenticationUOW>().LifestyleTransient())
-                .Register();
+                .Install(FromAssembly.Containing(typeof(Installers)));
         }
     }
 }

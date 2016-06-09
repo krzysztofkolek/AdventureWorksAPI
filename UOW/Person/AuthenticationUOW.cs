@@ -6,12 +6,18 @@ namespace AdventureWorks.UOW.Person
     using System.Linq;
     using EntityClasses.Person;
     using Model.Person;
+    using AdventureWorks.Repository.Main;
     using Repository.dbo;
 
     public class AuthenticationUOW : IAuthenticationUow
     {
-        private ContactRepository<Contact> _contactRepository = new ContactRepository<Contact>();
-        
+        private ContactRepository<Contact> _contactRepository;
+
+        public AuthenticationUOW(ContactRepository<Contact> contactRepository)
+        {
+            _contactRepository = contactRepository;
+        }
+
         public AuthenticationUOWModel ValidateHashedPassword(string username, string password)
         {
             var dbUser = _contactRepository.SearchFor(x => x.EmailAddress == username).FirstOrDefault();

@@ -7,7 +7,7 @@ namespace AdventureWorks.UOW.Person
 
     public class GetUserIfCorectForHashedPasswordUow : BaseUOW<AuthenticationUOWModel>
     {
-        private AuthenticationUOW _authenticationUow = new AuthenticationUOW();
+        private AuthenticationUOW _authenticationUow;
 
         private String _userName { get; set; }
         private String _password { get; set; }
