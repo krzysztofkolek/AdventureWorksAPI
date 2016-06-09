@@ -1,4 +1,4 @@
-﻿namespace AdventureWorks.API.Module
+﻿namespace AdventureWorks.API.Module.Auth
 {
     using Nancy;
     using Nancy.Authentication.Token;

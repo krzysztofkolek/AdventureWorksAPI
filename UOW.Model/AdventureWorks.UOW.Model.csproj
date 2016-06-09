@@ -39,7 +39,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Person\GetUserIfCorectUOW.cs" />
+    <Compile Include="Person\AuthenticationUOWModel.cs" />
+    <Compile Include="Person\ContactViewModel.cs" />
+    <Compile Include="Person\EmployeeViewModel.cs" />
+    <Compile Include="Person\UserInformationViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -6,7 +6,6 @@ namespace AdventureWorks.UOW.Person
     using System.Linq;
     using EntityClasses.Person;
     using Model.Person;
-    using AdventureWorks.Repository.Main;
     using Repository.dbo;
 
     public class AuthenticationUOW : IAuthenticationUow
