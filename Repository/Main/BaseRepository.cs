@@ -1,9 +1,9 @@
 ﻿namespace AdventureWorks.Repository.Main
 {
-    using System.Collections.Generic;
+    using System;
     using System.Linq;
     using NHibernate;
-    using NHibernate.Linq; 
+    using NHibernate.Linq;
 
     public abstract class BaseRepository<T>
     {
@@ -37,8 +37,15 @@
             {
                 using (ITransaction transaction = session.BeginTransaction())
                 {
-                    session.SaveOrUpdate(entity);
-                    transaction.Commit();
+                    try
+                    {
+                        session.SaveOrUpdate(entity);
+                        transaction.Commit();
+                    }
+                    catch (Exception ex)
+                    {
+                        transaction.Rollback();
+                    }
                 }
             }
         }
@@ -47,7 +54,18 @@
         {
             using (ISession session = SessionManager.OpenSession())
             {
-                session.Delete(entity);
+                using (ITransaction transaction = session.BeginTransaction())
+                {
+                    try
+                    {
+                        session.Delete(entity);
+                        transaction.Commit();
+                    }
+                    catch (Exception ex)
+                    {
+                        transaction.Rollback();
+                    }
+                }
             }
         }
     }
