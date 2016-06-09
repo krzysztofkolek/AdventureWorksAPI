@@ -17,8 +17,8 @@ namespace ConsoleApplication1
     {
         private static void Main(string[] args)
         {
-            Class1 test = new Class1();
-            test.GetTest();
+            //Class1 test = new Class1();
+            //test.GetTest();
 
         }
     }

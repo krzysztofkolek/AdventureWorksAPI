@@ -8,11 +8,11 @@ namespace AdventureWorks.UOW.Person
     using Model.Person;
     using Repository.dbo;
 
-    public static class AuthenticationUOW
+    public class AuthenticationUOW : IAuthenticationUow
     {
-        private static ContactRepository<Contact> _contactRepository = new ContactRepository<Contact>();
+        private ContactRepository<Contact> _contactRepository = new ContactRepository<Contact>();
         
-        public static AuthenticationUOWModel ValidateHashedPassword(string username, string password)
+        public AuthenticationUOWModel ValidateHashedPassword(string username, string password)
         {
             var dbUser = _contactRepository.SearchFor(x => x.EmailAddress == username).FirstOrDefault();
             if (dbUser != null)
@@ -31,9 +31,7 @@ namespace AdventureWorks.UOW.Person
             return null;
         }
 
-
-
-        private static string MD5(string password)
+        private string MD5(string password)
         {
             byte[] textBytes = System.Text.Encoding.Default.GetBytes(password);
             try
@@ -56,6 +54,5 @@ namespace AdventureWorks.UOW.Person
                 throw;
             }
         }
-
     }
 }

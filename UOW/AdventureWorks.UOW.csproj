@@ -47,12 +47,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="DI\Installers.cs" />
     <Compile Include="Main\BaseUOW.cs" />
     <Compile Include="Person\AuthenticationUOW.cs" />
     <Compile Include="Person\GetUserIfCorectForHashedPasswordUOW.cs" />
+    <Compile Include="Person\IAuthenticationUow.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

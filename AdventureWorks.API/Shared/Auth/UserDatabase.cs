@@ -5,9 +5,23 @@
 
     public class UserDatabase
     {
-        public static IUserIdentity ValidateUser(string userName, string password)
+        private GetUserIfCorectForHashedPasswordUow _getUserIfCorectForHashedPasswordUow { get; set; }
+
+        public UserDatabase(GetUserIfCorectForHashedPasswordUow getUserIfCorectForHashedPasswordUow)
         {
-            return new CustomUserIdentity(new GetUserIfCorectForHashedPasswordUow().GetResult());
+            _getUserIfCorectForHashedPasswordUow = getUserIfCorectForHashedPasswordUow;
+        }
+
+        public IUserIdentity ValidateUser(string userName, string password)
+        {
+            var user = _getUserIfCorectForHashedPasswordUow.SetUserName(userName)
+                                                           .SetPassword(password)
+                                                           .GetResult();
+            if (user != null)
+            {
+                return new CustomUserIdentity(user);
+            }
+            return null;
         }
     }
 }

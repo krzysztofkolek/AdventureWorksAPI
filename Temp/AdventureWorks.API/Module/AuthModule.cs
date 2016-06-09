@@ -7,19 +7,15 @@
 
     public class AuthModule : NancyModule
     {
-        private UserDatabase _userDatabase { get; set; }
-
-
-        public AuthModule(ITokenizer tokenizer, UserDatabase userDatabase)
+        public AuthModule(ITokenizer tokenizer)
             : base("/auth")
         {
-            _userDatabase = userDatabase;
             Post["/"] = x =>
             {
                 var userName = (string)this.Request.Form.UserName;
                 var password = (string)this.Request.Form.Password;
 
-                var userIdentity = _userDatabase.ValidateUser(userName, password);
+                var userIdentity = UserDatabase.ValidateUser(userName, password);
 
                 if (userIdentity == null)
                 {
