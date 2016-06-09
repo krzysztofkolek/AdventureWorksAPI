@@ -12,9 +12,8 @@
         protected override void RequestStartup(TinyIoCContainer container, IPipelines pipelines, NancyContext context)
         {
             TokenAuthentication.Enable(pipelines, new TokenAuthenticationConfiguration(container.Resolve<ITokenizer>()));
-
-            container.Register<AuthenticationUOW>().AsSingleton();
-            container.Register<UserDatabase>().AsSingleton();
+            
+            container.AutoRegister();
         }
     }
 }
