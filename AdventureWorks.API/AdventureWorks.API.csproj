@@ -86,6 +86,10 @@
     <Compile Include="Shared\Auth\UserIdentity.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AdventureWorks.API.Route\AdventureWorks.API.Route.csproj">
+      <Project>{25604101-66ac-45dc-85d7-25a367ae4fb7}</Project>
+      <Name>AdventureWorks.API.Route</Name>
+    </ProjectReference>
     <ProjectReference Include="..\UOW.Model\AdventureWorks.UOW.Model.csproj">
       <Project>{fe7b9c20-9998-4cfe-aed8-0a13a47f6d83}</Project>
       <Name>AdventureWorks.UOW.Model</Name>

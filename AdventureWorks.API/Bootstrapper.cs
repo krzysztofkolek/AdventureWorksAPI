@@ -4,8 +4,6 @@
     using Nancy.Authentication.Token;
     using Nancy.Bootstrapper;
     using Nancy.TinyIoc;
-    using Shared.Auth;
-    using UOW.Person;
 
     public class Bootstrapper : DefaultNancyBootstrapper
     {

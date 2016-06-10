@@ -3,6 +3,7 @@
     using Nancy;
     using Nancy.Authentication.Token;
     using Nancy.Security;
+    using Route.Module.Auth;
     using Shared.Auth;  
 
     public class AuthModule : NancyModule
@@ -11,10 +12,12 @@
 
 
         public AuthModule(ITokenizer tokenizer, UserDatabase userDatabase)
-            : base("/auth")
+            : base(AuthRoute.Base)
         {
             _userDatabase = userDatabase;
-            Post["/"] = x =>
+
+            // Login
+            Post[AuthRoute.LoginPost] = _ =>
             {
                 var userName = (string)this.Request.Form.UserName;
                 var password = (string)this.Request.Form.Password;
@@ -32,6 +35,12 @@
                 {
                     Token = token,
                 };
+            };
+
+            // Register
+            Put[AuthRoute.RegisterPost] = _ =>
+            {
+                return null;
             };
 
             Get["/validation"] = _ =>
