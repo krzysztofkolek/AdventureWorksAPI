@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Base\BaseResultViewModel.cs" />
     <Compile Include="Person\AuthenticationUOWModel.cs" />
     <Compile Include="Person\ContactViewModel.cs" />
     <Compile Include="Person\EmployeeViewModel.cs" />

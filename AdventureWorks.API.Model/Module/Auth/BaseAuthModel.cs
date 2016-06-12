@@ -4,6 +4,9 @@
 
     public class BaseAuthModel
     {
-        public String Token { get; set; }
+        public void PrepareForView()
+        {
+
+        }
     }
 }

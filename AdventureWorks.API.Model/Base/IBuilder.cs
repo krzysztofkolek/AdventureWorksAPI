@@ -1,6 +1,7 @@
 ﻿namespace AdventureWorks.API.Model.Base
 {
-    interface IBuilder
+    public interface IBuilder<T>
     {
+        T Build();
     }
 }

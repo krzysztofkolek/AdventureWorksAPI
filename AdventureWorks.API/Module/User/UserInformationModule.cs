@@ -1,5 +1,6 @@
 ﻿namespace AdventureWorks.API.Module.User
 {
+    using Model.Module.User;
     using Nancy;
     using Nancy.Security;
     using Route.Module.User;
@@ -18,8 +19,9 @@
 
             Get[UserInformationRoute.GetUserInformation] = _ =>
             {
-                return _userInformatioUow.SetUserName(this.Context.CurrentUser.UserName)
-                                         .GetResult();
+                return new GetUserInformationModel(
+                            _userInformatioUow.SetUserName(this.Context.CurrentUser.UserName)
+                                              .GetResult());
             };
         }
     }

@@ -1,9 +1,11 @@
 ﻿namespace AdventureWorks.UOW.Model.Person
 {
+    using System;
+
     public class EmployeeViewModel
     {
-        public System.DateTime BirthDate { get; set; }
-        public System.String Gender { get; set; }
-        public System.DateTime HireDate { get; set; }
+        public DateTime BirthDate { get; set; }
+        public String Gender { get; set; }
+        public DateTime HireDate { get; set; }
     }
 }

@@ -1,12 +1,14 @@
 ﻿namespace AdventureWorks.UOW.Model.Person
 {
+    using System;
+
     public class ContactViewModel
     {
-        public System.String EmailAddress { get; set; }
-        public System.String FirstName { get; set; }
-        public System.String LastName { get; set; }
-        public System.String MiddleName { get; set; }
-        public System.String Phone { get; set; }
-        public System.String Title { get; set; }
+        public String EmailAddress { get; set; }
+        public String FirstName { get; set; }
+        public String LastName { get; set; }
+        public String MiddleName { get; set; }
+        public String Phone { get; set; }
+        public String Title { get; set; }
     }
 }
