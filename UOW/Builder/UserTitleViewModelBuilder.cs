@@ -12,10 +12,10 @@
             _title = title;
             return this;
         }
-        
+
         public override UserTitleViewModel Build()
         {
-            UserTitleViewModel model = new UserTitleViewModel();
+            var model = new UserTitleViewModel();
 
             model.Title = _title;
 

@@ -6,16 +6,15 @@
 
     public class GetUserIfCorectForHashedPasswordUow : BaseUOW<AuthenticationUOWModel>
     {
-        private AuthenticationUOW _authenticationUow;
-
-        private String _userName { get; set; }
-        private String _password { get; set; }
-
+        private readonly AuthenticationUOW _authenticationUow;
 
         public GetUserIfCorectForHashedPasswordUow(AuthenticationUOW authenticationUow)
         {
             _authenticationUow = authenticationUow;
         }
+
+        private String _userName { get; set; }
+        private String _password { get; set; }
 
 
         public GetUserIfCorectForHashedPasswordUow SetUserName(string username)

@@ -5,6 +5,6 @@
     public class GetProductsSoldByPersonItemModel
     {
         public String ProductName { get; set; }
-        public int ProductSoldItemsCount { get; set; } 
+        public int ProductSoldItemsCount { get; set; }
     }
 }

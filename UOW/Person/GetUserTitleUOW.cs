@@ -11,19 +11,20 @@
 
     public class GetUserTitleUOW : BaseUOW<UserTitleViewModel>
     {
-        private ContactRepository<Contact> _contactRepository;
-        private EmployeeRepository<Employee> _employeeRepository;
-        private UserTitleViewModelBuilder _userTitleViewModelBuilder;
-
-        private String _userName { get; set; }
+        private readonly ContactRepository<Contact> _contactRepository;
+        private readonly EmployeeRepository<Employee> _employeeRepository;
+        private readonly UserTitleViewModelBuilder _userTitleViewModelBuilder;
 
 
-        public GetUserTitleUOW(EmployeeRepository<Employee> employeeRepository, ContactRepository<Contact> contactRepository, UserTitleViewModelBuilder userTitleViewModelBuilder)
+        public GetUserTitleUOW(EmployeeRepository<Employee> employeeRepository,
+            ContactRepository<Contact> contactRepository, UserTitleViewModelBuilder userTitleViewModelBuilder)
         {
             _contactRepository = contactRepository;
             _employeeRepository = employeeRepository;
             _userTitleViewModelBuilder = userTitleViewModelBuilder;
         }
+
+        private String _userName { get; set; }
 
         public GetUserTitleUOW SetUserName(string username)
         {
@@ -33,11 +34,12 @@
 
         public override UserTitleViewModel GetResult()
         {
-            var userContact = _contactRepository.SearchFor(x => x.EmailAddress.Equals(_userName)).FirstOrDefault();
-            var userEmployee = _employeeRepository.SearchFor(x => x.Contact.ContactId.Equals(userContact.ContactId)).FirstOrDefault();
+            Contact userContact = _contactRepository.SearchFor(x => x.EmailAddress.Equals(_userName)).FirstOrDefault();
+            Employee userEmployee =
+                _employeeRepository.SearchFor(x => x.Contact.ContactId.Equals(userContact.ContactId)).FirstOrDefault();
 
             return _userTitleViewModelBuilder.SetTitle(userEmployee.Title)
-                                             .Build();
+                .Build();
         }
     }
 }

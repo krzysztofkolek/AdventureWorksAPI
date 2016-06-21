@@ -1,5 +1,6 @@
 ﻿namespace AdventureWorks.UOW.Sales
 {
+    using System;
     using System.Collections.Generic;
     using Main;
     using Model.Sales;
@@ -8,7 +9,7 @@
     {
         public override List<GetAllTerritorysForModel> GetResult()
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
     }
 }

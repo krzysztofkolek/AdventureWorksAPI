@@ -1,6 +1,6 @@
 ﻿namespace AdventureWorks.UOW.Builder
 {
-    using AdventureWorks.EntityClasses.HumanResources;
+    using EntityClasses.HumanResources;
     using EntityClasses.Person;
     using Model.Person;
 
@@ -14,22 +14,23 @@
             _contact = contact;
             return this;
         }
+
         public UserInformationViewModelBuilder SetEmployee(Employee employee)
         {
             _employee = employee;
             return this;
         }
-        
+
         public override UserInformationViewModel Build()
         {
-            UserInformationViewModel model = new UserInformationViewModel();
+            var model = new UserInformationViewModel();
 
             if (_contact != null)
             {
                 model.ContactVM = new ContactViewModel();
                 model.ContactVM.EmailAddress = _contact.EmailAddress;
                 model.ContactVM.FirstName = _contact.FirstName;
-                model.ContactVM.LastName =  _contact.LastName;
+                model.ContactVM.LastName = _contact.LastName;
                 model.ContactVM.MiddleName = _contact.MiddleName;
                 model.ContactVM.Phone = _contact.Phone;
                 model.ContactVM.Title = _contact.Title;

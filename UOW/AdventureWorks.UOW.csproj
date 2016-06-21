@@ -48,20 +48,28 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Builder\Builder.cs" />
+    <Compile Include="Builder\getCustomersViewModelBuilder.cs" />
+    <Compile Include="Builder\GetEmployeesViewModelBuilder.cs" />
+    <Compile Include="Builder\GetProductionViewModelBuilder.cs" />
+    <Compile Include="Builder\GetPurchasesViewModelBuilder.cs" />
+    <Compile Include="Builder\GetSalesViewModelBuilder.cs" />
     <Compile Include="Builder\UserInformationViewModelBuilder.cs" />
     <Compile Include="Builder\UserTitleViewModelBuilder.cs" />
     <Compile Include="Configuration\Configuration.cs" />
     <Compile Include="DI\Installers.cs" />
+    <Compile Include="HumanResources\GetEmployeesUOW.cs" />
     <Compile Include="Main\BaseUOW.cs" />
     <Compile Include="Person\AuthenticationUOW.cs" />
+    <Compile Include="Person\GetCustomersUOW.cs" />
     <Compile Include="Person\GetUserIfCorectForHashedPasswordUOW.cs" />
     <Compile Include="Person\GetUserInformatioUOW.cs" />
     <Compile Include="Person\GetUserTitleUOW.cs" />
     <Compile Include="Person\IAuthenticationUow.cs" />
+    <Compile Include="Production\GetProductionUOW.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Purchasing\GetAllPurchasesUOW.cs" />
+    <Compile Include="Purchasing\GetPurchasesUOW.cs" />
     <Compile Include="Sales\GetAllProductsSoldUOW.cs" />
-    <Compile Include="Sales\GetAllSalesUOW.cs" />
+    <Compile Include="Sales\GetSalesUOW.cs" />
     <Compile Include="Sales\GetAllTerritorysForSalesUOW.cs" />
     <Compile Include="Sales\GetProductsSoldByPersonUOW.cs" />
   </ItemGroup>
@@ -88,8 +96,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="dbo\" />
-    <Folder Include="HumanResources\" />
-    <Folder Include="Production\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

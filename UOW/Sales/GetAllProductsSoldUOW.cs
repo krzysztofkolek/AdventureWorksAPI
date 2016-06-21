@@ -1,5 +1,6 @@
 ﻿namespace AdventureWorks.UOW.Sales
 {
+    using System.Collections.Generic;
     using System.Linq;
     using EntityClasses.Production;
     using Main;
@@ -8,24 +9,27 @@
 
     public class GetAllProductsSoldUOW : BaseUOW<GetAllProductsSoldModel>
     {
-        private ProductRepository<Product> _productRepository { get; set; }
-
         public GetAllProductsSoldUOW(ProductRepository<Product> productRepository)
         {
             _productRepository = productRepository;
         }
 
+        private ProductRepository<Product> _productRepository { get; set; }
+
         public override GetAllProductsSoldModel GetResult()
         {
-            var allProducts = _productRepository.GetAll();
-            GetAllProductsSoldModel model = new GetAllProductsSoldModel()
+            IList<Product> allProducts = _productRepository.GetAll();
+            var model = new GetAllProductsSoldModel
             {
-                Items = allProducts.Select(item => new GetAllProductsSoldItemModel()
+                Items = allProducts.Select(item => new GetAllProductsSoldItemModel
                 {
                     Name = item.Name,
                     Size = item.Size,
                     StandardCost = item.StandardCost,
-                    ThumbNailPhoto = (item.ProductProductPhotos.FirstOrDefault() != null) ? item.ProductProductPhotos.FirstOrDefault().ProductPhoto.ThumbNailPhoto : new byte[0]
+                    ThumbNailPhoto =
+                        (item.ProductProductPhotos.FirstOrDefault() != null)
+                            ? item.ProductProductPhotos.FirstOrDefault().ProductPhoto.ThumbNailPhoto
+                            : new byte[0]
                 }).ToList()
             };
 

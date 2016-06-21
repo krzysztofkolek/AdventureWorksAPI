@@ -8,12 +8,16 @@
     {
         public void PrepareForView()
         {
-            foreach (var item in this.GetType().GetProperties())
+            foreach (PropertyInfo item in GetType().GetProperties())
             {
-                if ((((item.PropertyType.UnderlyingSystemType).BaseType)).Name == typeof(BaseResultViewModel).Name)
+                if ((((item.PropertyType.UnderlyingSystemType).BaseType)).Name == typeof (BaseResultViewModel).Name)
                 {
                     PrepareForView(item.GetValue(this),
-                        (item.PropertyType.UnderlyingSystemType).GetProperties().Where(x => x.PropertyType.FullName.Equals("System.String") || x.PropertyType.FullName.StartsWith("AdventureWorks")));
+                        (item.PropertyType.UnderlyingSystemType).GetProperties()
+                            .Where(
+                                x =>
+                                    x.PropertyType.FullName.Equals("System.String") ||
+                                    x.PropertyType.FullName.StartsWith("AdventureWorks")));
                 }
                 else
                 {
@@ -30,7 +34,7 @@
 
         private void PrepareForView(dynamic obj, IEnumerable<PropertyInfo> info)
         {
-            foreach (var item in info)
+            foreach (PropertyInfo item in info)
             {
                 if (((item)).PropertyType.FullName.Equals("System.String"))
                 {
@@ -40,9 +44,14 @@
                     }
                 }
 
-                if ((((item.PropertyType.UnderlyingSystemType).BaseType)).Name == typeof(BaseResultViewModel).Name)
+                if ((((item.PropertyType.UnderlyingSystemType).BaseType)).Name == typeof (BaseResultViewModel).Name)
                 {
-                    PrepareForView(obj.GetType().GetProperty(item.Name).GetValue(obj, null), (item.PropertyType.UnderlyingSystemType).GetProperties().Where(x => x.PropertyType.FullName.Equals("System.String") || x.PropertyType.FullName.StartsWith("AdventureWorks")));
+                    PrepareForView(obj.GetType().GetProperty(item.Name).GetValue(obj, null),
+                        (item.PropertyType.UnderlyingSystemType).GetProperties()
+                            .Where(
+                                x =>
+                                    x.PropertyType.FullName.Equals("System.String") ||
+                                    x.PropertyType.FullName.StartsWith("AdventureWorks")));
                 }
             }
         }

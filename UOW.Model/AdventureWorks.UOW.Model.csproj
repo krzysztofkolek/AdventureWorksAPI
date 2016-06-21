@@ -40,23 +40,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base\BaseResultViewModel.cs" />
+    <Compile Include="HumanResources\GetEmployeesModel.cs" />
     <Compile Include="Person\AuthenticationUOWModel.cs" />
     <Compile Include="Person\ContactViewModel.cs" />
     <Compile Include="Person\EmployeeViewModel.cs" />
+    <Compile Include="Person\GetCustomersModel.cs" />
     <Compile Include="Person\UserInformationViewModel.cs" />
     <Compile Include="Person\UserTitleViewModel.cs" />
+    <Compile Include="Production\GetProductionModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Purchasing\GetPurchasesModel.cs" />
     <Compile Include="Sales\GetAllProductsSoldItemModel.cs" />
     <Compile Include="Sales\GetAllProductsSoldModel.cs" />
     <Compile Include="Sales\GetAllTerritorysForModel.cs" />
     <Compile Include="Sales\GetProductsSoldByPersonItemModel.cs" />
     <Compile Include="Sales\GetProductsSoldByPersonModel.cs" />
+    <Compile Include="Sales\GetSalesModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="dbo\" />
-    <Folder Include="HumanResources\" />
-    <Folder Include="Production\" />
-    <Folder Include="Purchasing\" />
     <Folder Include="Report\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

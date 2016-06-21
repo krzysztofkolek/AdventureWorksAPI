@@ -3,6 +3,7 @@
     public class Configuration
     {
         private static Configuration InstanceContainer { get; set; }
+
         public static Configuration Instance
         {
             get
@@ -14,8 +15,9 @@
                 return InstanceContainer;
             }
         }
-        
-        public int PageSize {
+
+        public int PageSize
+        {
             get { return 10; }
         }
 
