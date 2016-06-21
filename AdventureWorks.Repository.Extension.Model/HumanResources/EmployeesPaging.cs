@@ -1,8 +1,8 @@
-﻿namespace AdventureWorks.API.Model.Module.HumanResources
+﻿namespace AdventureWorks.Repository.Extension.Model.HumanResources
 {
     using System;
 
-    public class HREmployee
+    public class EmployeesPaging
     {
         public int Id { get; set; }
         public String FullName { get; set; }

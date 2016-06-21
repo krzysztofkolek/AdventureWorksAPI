@@ -9,6 +9,7 @@
     using Main;
     using Model.Sales;
     using Repository.dbo;
+    using Repository.HumanResources;
 
     public class GetProductsSoldByPersonUOW : BaseUOW<GetProductsSoldByPersonModel>
     {

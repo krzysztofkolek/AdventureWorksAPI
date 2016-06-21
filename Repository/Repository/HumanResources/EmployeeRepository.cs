@@ -1,9 +1,9 @@
-﻿namespace AdventureWorks.Repository.dbo
+﻿namespace AdventureWorks.Repository.HumanResources
 {
     using EntityClasses.HumanResources;
     using Main;
 
-    public class EmployeeRepository<T> : BaseRepository<T>,  IRepository<T>, IEditableRepository<T>
+    public class EmployeeRepository<T> : BaseRepository<T>, IRepository<T>, IEditableRepository<T>
         where T : Employee, new()
     {
         public System.Collections.Generic.IList<T> SearchFor(System.Linq.Expressions.Expression<System.Func<T, bool>> predicate)

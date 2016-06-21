@@ -69,6 +69,7 @@
     <Compile Include="Repository\dbo\AwbuildVersionRepository.cs" />
     <Compile Include="Repository\dbo\DatabaseLogRepository.cs" />
     <Compile Include="Repository\HumanResources\DepartmentRepository.cs" />
+    <Compile Include="Repository\HumanResources\EmployeeExtendedRepository.cs" />
     <Compile Include="Repository\HumanResources\EmployeeRepository.cs" />
     <Compile Include="Repository\HumanResources\EmployeeAddressRepository.cs" />
     <Compile Include="Repository\HumanResources\EmployeeDepartmentHistoryRepository.cs" />
@@ -137,6 +138,10 @@
     <Compile Include="Repository\Sales\StoreContactRepository.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AdventureWorks.Repository.Extension.Model\AdventureWorks.Repository.Extension.Model.csproj">
+      <Project>{44b13f9e-7b33-439b-b49b-2eeaa210c4c4}</Project>
+      <Name>AdventureWorks.Repository.Extension.Model</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Model\AdventureWorks.Model.csproj">
       <Project>{2b4644a3-c06d-4520-ad71-593676b79212}</Project>
       <Name>AdventureWorks.Model</Name>

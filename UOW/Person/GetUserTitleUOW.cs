@@ -8,6 +8,7 @@
     using Main;
     using Model.Person;
     using Repository.dbo;
+    using Repository.HumanResources;
 
     public class GetUserTitleUOW : BaseUOW<UserTitleViewModel>
     {

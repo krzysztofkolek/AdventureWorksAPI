@@ -78,6 +78,10 @@
       <Project>{46657647-5ADA-4108-A1BC-2FFE73D449E7}</Project>
       <Name>AdventureWorks.API.Model</Name>
     </ProjectReference>
+    <ProjectReference Include="..\AdventureWorks.Repository.Extension.Model\AdventureWorks.Repository.Extension.Model.csproj">
+      <Project>{44b13f9e-7b33-439b-b49b-2eeaa210c4c4}</Project>
+      <Name>AdventureWorks.Repository.Extension.Model</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Model\AdventureWorks.Model.csproj">
       <Project>{2b4644a3-c06d-4520-ad71-593676b79212}</Project>
       <Name>AdventureWorks.Model</Name>

@@ -8,6 +8,7 @@
     using EntityClasses.Production;
     using EntityClasses.Purchasing;
     using EntityClasses.Sales;
+    using HumanResources;
     using Main; 
 
     public class Installers : IWindsorInstaller

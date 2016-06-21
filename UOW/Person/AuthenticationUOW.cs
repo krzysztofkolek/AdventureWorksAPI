@@ -10,6 +10,7 @@
     using EntityClasses.Person;
     using Model.Person;
     using Repository.dbo;
+    using Repository.HumanResources;
 
     public class AuthenticationUOW : IAuthenticationUow
     {
