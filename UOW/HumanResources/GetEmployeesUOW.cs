@@ -4,9 +4,9 @@
     using Main;
     using Model.HumanResources;
 
-    public class GetEmployeesUOW : BaseUOW<GetEmployeesModel>
+    public class GetEmployeesUOW : BaseUOW<GetEmployeesViewModel>
     {
-        public override GetEmployeesModel GetResult()
+        public override GetEmployeesViewModel GetResult()
         {
             throw new NotImplementedException();
         }

@@ -1,6 +1,6 @@
 ﻿namespace AdventureWorks.UOW.Model.Purchasing
 {
-    public class GetPurchasesModel
+    public class GetPurchasesViewModel
     {
     }
 }

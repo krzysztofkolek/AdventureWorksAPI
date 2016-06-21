@@ -1,6 +1,6 @@
 ﻿namespace AdventureWorks.UOW.Model.Person
 {
-    public class GetCustomersModel
+    public class GetCustomersViewModel
     {
     }
 }

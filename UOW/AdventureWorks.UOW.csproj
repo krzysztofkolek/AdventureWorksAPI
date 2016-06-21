@@ -48,7 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Builder\Builder.cs" />
-    <Compile Include="Builder\getCustomersViewModelBuilder.cs" />
+    <Compile Include="Builder\GetCustomersViewModelBuilder.cs" />
     <Compile Include="Builder\GetEmployeesViewModelBuilder.cs" />
     <Compile Include="Builder\GetProductionViewModelBuilder.cs" />
     <Compile Include="Builder\GetPurchasesViewModelBuilder.cs" />

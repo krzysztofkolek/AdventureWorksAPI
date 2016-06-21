@@ -4,9 +4,9 @@
     using Main;
     using Model.Person;
 
-    internal class GetCustomersUOW : BaseUOW<GetCustomersModel>
+    internal class GetCustomersUOW : BaseUOW<GetCustomersViewModel>
     {
-        public override GetCustomersModel GetResult()
+        public override GetCustomersViewModel GetResult()
         {
             throw new NotImplementedException();
         }

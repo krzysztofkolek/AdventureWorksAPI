@@ -4,9 +4,9 @@
     using Main;
     using Model.Purchasing;
 
-    public class GetPurchasesUOW : BaseUOW<GetPurchasesModel>
+    public class GetPurchasesUOW : BaseUOW<GetPurchasesViewModel>
     {
-        public override GetPurchasesModel GetResult()
+        public override GetPurchasesViewModel GetResult()
         {
             throw new NotImplementedException();
         }

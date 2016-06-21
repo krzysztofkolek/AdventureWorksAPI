@@ -4,9 +4,9 @@
     using Main;
     using Model.Production;
 
-    internal class GetProductionUOW : BaseUOW<GetProductionModel>
+    internal class GetProductionUOW : BaseUOW<GetProductionViewModel>
     {
-        public override GetProductionModel GetResult()
+        public override GetProductionViewModel GetResult()
         {
             throw new NotImplementedException();
         }
