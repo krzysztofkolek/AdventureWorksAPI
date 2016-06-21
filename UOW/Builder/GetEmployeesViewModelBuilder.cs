@@ -1,6 +1,12 @@
 ﻿namespace AdventureWorks.UOW.Builder
 {
-    internal class GetEmployeesViewModelBuilder
+    using Model.HumanResources;
+
+    internal class GetEmployeesViewModelBuilder : Builder<GetEmployeesViewModel>
     {
+        public override GetEmployeesViewModel Build()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

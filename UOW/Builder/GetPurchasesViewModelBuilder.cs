@@ -1,6 +1,12 @@
 ﻿namespace AdventureWorks.UOW.Builder
 {
-    internal class GetPurchasesViewModelBuilder
+    using Model.Purchasing;
+
+    internal class GetPurchasesViewModelBuilder : Builder<GetPurchasesViewModel>
     {
+        public override GetPurchasesViewModel Build()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
