@@ -49,15 +49,27 @@
   <ItemGroup>
     <Compile Include="Builder\Builder.cs" />
     <Compile Include="Builder\UserInformationViewModelBuilder.cs" />
+    <Compile Include="Builder\UserTitleViewModelBuilder.cs" />
+    <Compile Include="Configuration\Configuration.cs" />
     <Compile Include="DI\Installers.cs" />
     <Compile Include="Main\BaseUOW.cs" />
     <Compile Include="Person\AuthenticationUOW.cs" />
     <Compile Include="Person\GetUserIfCorectForHashedPasswordUOW.cs" />
     <Compile Include="Person\GetUserInformatioUOW.cs" />
+    <Compile Include="Person\GetUserTitleUOW.cs" />
     <Compile Include="Person\IAuthenticationUow.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Purchasing\GetAllPurchasesUOW.cs" />
+    <Compile Include="Sales\GetAllProductsSoldUOW.cs" />
+    <Compile Include="Sales\GetAllSalesUOW.cs" />
+    <Compile Include="Sales\GetAllTerritorysForSalesUOW.cs" />
+    <Compile Include="Sales\GetProductsSoldByPersonUOW.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AdventureWorks.API.Model\AdventureWorks.API.Model.csproj">
+      <Project>{46657647-5ADA-4108-A1BC-2FFE73D449E7}</Project>
+      <Name>AdventureWorks.API.Model</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Model\AdventureWorks.Model.csproj">
       <Project>{2b4644a3-c06d-4520-ad71-593676b79212}</Project>
       <Name>AdventureWorks.Model</Name>
@@ -78,8 +90,6 @@
     <Folder Include="dbo\" />
     <Folder Include="HumanResources\" />
     <Folder Include="Production\" />
-    <Folder Include="Purchasing\" />
-    <Folder Include="Sales\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

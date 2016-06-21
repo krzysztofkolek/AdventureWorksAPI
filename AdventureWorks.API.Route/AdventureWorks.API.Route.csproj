@@ -41,8 +41,17 @@
   <ItemGroup>
     <Compile Include="Module\Auth\AuthRoute.cs" />
     <Compile Include="Module\BaseRoute.cs" />
+    <Compile Include="Module\HumanResources\EmployeesRoute.cs" />
+    <Compile Include="Module\Person\CustomersRoute.cs" />
+    <Compile Include="Module\Production\ProductionRoute.cs" />
+    <Compile Include="Module\Purchasing\PurchasesRoute.cs" />
+    <Compile Include="Module\Sales\SalesRoute.cs" />
     <Compile Include="Module\User\UserInformationRoute.cs" />
+    <Compile Include="Module\User\UserTitleRoute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Module\Reports\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

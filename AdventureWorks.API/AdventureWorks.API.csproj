@@ -80,6 +80,12 @@
   <ItemGroup>
     <Compile Include="Module\Auth\AuthModule.cs" />
     <Compile Include="Bootstrapper.cs" />
+    <Compile Include="Module\HumanResources\EmployeesModule.cs" />
+    <Compile Include="Module\Person\CustomersModule.cs" />
+    <Compile Include="Module\Production\ProductionModule.cs" />
+    <Compile Include="Module\Purchasing\PurchasesModule.cs" />
+    <Compile Include="Module\Sales\SalesModule.cs" />
+    <Compile Include="Module\User\GetUserTitleModule.cs" />
     <Compile Include="Module\User\UserInformationModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Shared\Auth\UserDatabase.cs" />
@@ -103,7 +109,9 @@
       <Name>AdventureWorks.UOW</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Module\Reports\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

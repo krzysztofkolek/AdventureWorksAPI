@@ -4,6 +4,8 @@ namespace AdventureWorks.UOW.Person
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using API.Model.Module.Auth;
+    using EntityClasses.HumanResources;
     using EntityClasses.Person;
     using Model.Person;
     using Repository.dbo;
@@ -11,10 +13,12 @@ namespace AdventureWorks.UOW.Person
     public class AuthenticationUOW : IAuthenticationUow
     {
         private ContactRepository<Contact> _contactRepository;
+        private EmployeeRepository<Employee> _employeeRepository;
 
-        public AuthenticationUOW(ContactRepository<Contact> contactRepository)
+        public AuthenticationUOW(ContactRepository<Contact> contactRepository, EmployeeRepository<Employee> employeeRepository)
         {
             _contactRepository = contactRepository;
+            _employeeRepository = employeeRepository;
         }
 
         public AuthenticationUOWModel ValidateHashedPassword(string username, string password)
@@ -26,10 +30,23 @@ namespace AdventureWorks.UOW.Person
 
                 if (dbUser.PasswordHash.Equals(passwordGenerated))
                 {
+                    var userClaim = UserClaims.Customer;
+                    if (dbUser.Employees != null)
+                    {
+                        userClaim = UserClaims.Employee;
+                        
+                        var chief = _employeeRepository.SearchFor(x => x.Contact.ContactId.Equals(dbUser.ContactId)).FirstOrDefault();
+                        if (chief != null && chief.EmployeeNav == null)
+                        {
+                            //userClaim = UserClaims.Chief;
+                        }
+                    }
+
+
                     return new AuthenticationUOWModel()
                     {
                         UserName = username,
-                        Claims = new List<String>() { "" }
+                        Claims = new List<String>() { userClaim.ToString() }
                     };
                 }
             }

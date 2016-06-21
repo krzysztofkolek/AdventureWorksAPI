@@ -1,5 +1,6 @@
 ﻿namespace AdventureWorks.RestClient
-{ 
+{
+    using API.Model.Module.Auth;
     using RestSharp;
     using RestSharp.Deserializers;
     using System;
@@ -75,7 +76,11 @@
             }
             else if (_response.StatusCode != HttpStatusCode.OK)
             {
-                throw new Exception("REST exception");
+                #if DEBUG
+                    throw new Exception("REST exception " + _response.StatusCode);
+                #else
+                    throw new Exception("REST exception");
+                #endif
             }
 
             return this;
@@ -96,7 +101,7 @@
             return ExecutePost().GetRestResult();
         }
 
-        public static ClientDataAuth Authorizatize(string url, string login, string password)
+        public static BaseAuthModel Authorizatize(string url, string login, string password)
         {
             var client = new RestClient(url);
             var request = new RestRequest(Method.POST);
@@ -110,7 +115,7 @@
 
             if (response.StatusCode == HttpStatusCode.OK)
             {
-                return new JsonDeserializer().Deserialize<ClientDataAuth>(response);
+                return new JsonDeserializer().Deserialize<BaseAuthModel>(response);
             }
             return null;
         }

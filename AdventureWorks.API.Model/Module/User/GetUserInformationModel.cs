@@ -6,10 +6,6 @@
 
     public class GetUserInformationModel : BaseAuthModel, IBuilder<GetUserInformationModel>
     {
-        public EmployeeModel EmployeeVM { get; set; }
-        public ContactModel ContactVM { get; set; }
-        private UserInformationViewModel _userInformationViewModel { get; set; }
-
         public GetUserInformationModel()
         {
         }
@@ -19,6 +15,10 @@
             _userInformationViewModel = userInformationViewModel;
             Build();
         }
+
+        public EmployeeModel EmployeeVM { get; set; }
+        public ContactModel ContactVM { get; set; }
+        private UserInformationViewModel _userInformationViewModel { get; set; }
 
         public GetUserInformationModel Build()
         {

@@ -45,9 +45,20 @@
   <ItemGroup>
     <Compile Include="Base\IBuilder.cs" />
     <Compile Include="Module\Auth\BaseAuthModel.cs" />
+    <Compile Include="Module\Auth\UserClaims.cs" />
+    <Compile Include="Module\HumanResources\GetEmployeesModel.cs" />
+    <Compile Include="Module\HumanResources\HREmployee.cs" />
+    <Compile Include="Module\Person\GetCustomersModel.cs" />
+    <Compile Include="Module\Production\GetProductionModel.cs" />
+    <Compile Include="Module\Purchasing\GetPurchasingModel.cs" />
+    <Compile Include="Module\Sales\GetAllProductsSoldModel.cs" />
+    <Compile Include="Module\Sales\GetAllTerritorysForModel.cs" />
+    <Compile Include="Module\Sales\GetProductsSoldByPersonModel.cs" />
+    <Compile Include="Module\Sales\GetSalesModel.cs" />
     <Compile Include="Module\User\ContactModel.cs" />
     <Compile Include="Module\User\EmployeeModel.cs" />
     <Compile Include="Module\User\GetUserInformationModel.cs" />
+    <Compile Include="Module\User\GetUserTitleModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -58,6 +69,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Module\Reports\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

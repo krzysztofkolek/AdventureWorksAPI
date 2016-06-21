@@ -44,14 +44,20 @@
     <Compile Include="Person\ContactViewModel.cs" />
     <Compile Include="Person\EmployeeViewModel.cs" />
     <Compile Include="Person\UserInformationViewModel.cs" />
+    <Compile Include="Person\UserTitleViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sales\GetAllProductsSoldItemModel.cs" />
+    <Compile Include="Sales\GetAllProductsSoldModel.cs" />
+    <Compile Include="Sales\GetAllTerritorysForModel.cs" />
+    <Compile Include="Sales\GetProductsSoldByPersonItemModel.cs" />
+    <Compile Include="Sales\GetProductsSoldByPersonModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="dbo\" />
     <Folder Include="HumanResources\" />
     <Folder Include="Production\" />
     <Folder Include="Purchasing\" />
-    <Folder Include="Sales\" />
+    <Folder Include="Report\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

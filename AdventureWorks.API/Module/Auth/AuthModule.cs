@@ -1,5 +1,7 @@
 ﻿namespace AdventureWorks.API.Module.Auth
 {
+    using System.Linq;
+    using Model.Module.Auth;
     using Nancy;
     using Nancy.Authentication.Token;
     using Nancy.Security;
@@ -31,9 +33,10 @@
 
                 var token = tokenizer.Tokenize(userIdentity, Context);
 
-                return new
+                return new BaseAuthModel()
                 {
                     Token = token,
+                    Claims = userIdentity.Claims.ToList()
                 };
             };
 

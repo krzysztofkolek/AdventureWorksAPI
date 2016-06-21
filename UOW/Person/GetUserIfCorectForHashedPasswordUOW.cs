@@ -1,5 +1,4 @@
-﻿
-namespace AdventureWorks.UOW.Person
+﻿namespace AdventureWorks.UOW.Person
 {
     using System;
     using Main;
