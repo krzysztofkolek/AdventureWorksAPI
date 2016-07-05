@@ -15,20 +15,21 @@
             {
                 using (ITransaction transaction = session.BeginTransaction())
                 {
-                    try
+                    foreach (var entity in session.Query<AdventureWorks.EntityClasses.Person.Contact>().AsQueryable().ToList())
                     {
-                        foreach (var entity in session.Query<AdventureWorks.EntityClasses.Person.Contact>().AsQueryable().ToList())
+                        try
                         {
                             entity.PasswordHash = MD5(string.Format("{0}{1}{2}", entity.EmailAddress, MD5(entity.EmailAddress), entity.PasswordSalt)) + "=";
 
                             session.SaveOrUpdate(entity);
-                            transaction.Commit();
+                        }
+                        catch (Exception ex)
+                        {
+                            transaction.Rollback();
                         }
                     }
-                    catch (Exception ex)
-                    {
-                        transaction.Rollback();
-                    }
+
+                    transaction.Commit();
                 }
             }
         }
