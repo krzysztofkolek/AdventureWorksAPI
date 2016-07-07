@@ -35,7 +35,34 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac">
+      <HintPath>..\packages\Autofac.3.5.2\lib\net40\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.core">
+      <HintPath>..\packages\NUnitTestAdapter.2.0.0\lib\nunit.core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="nunit.core.interfaces">
+      <HintPath>..\packages\NUnitTestAdapter.2.0.0\lib\nunit.core.interfaces.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="nunit.framework, Version=3.4.1.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NUnit.3.4.1\lib\net45\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.util">
+      <HintPath>..\packages\NUnitTestAdapter.2.0.0\lib\nunit.util.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="NUnit.VisualStudio.TestAdapter">
+      <HintPath>..\packages\NUnitTestAdapter.2.0.0\lib\NUnit.VisualStudio.TestAdapter.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Rhino.Mocks">
+      <HintPath>..\packages\RhinoMocks.3.6.1\lib\net\Rhino.Mocks.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -50,7 +77,81 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Main\BaseRepositoryTest.cs" />
+    <Compile Include="Main\BaseSetup.cs" />
+    <Compile Include="netfx\System\Xml\XmlSerializer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\dbo\AwbuildVersionRepositoryTest.cs" />
+    <Compile Include="Repository\dbo\DatabaseLogRepositoryTest.cs" />
+    <Compile Include="Repository\dbo\ErrorLogRepositoryTest.cs" />
+    <Compile Include="Repository\HumanResources\DepartmentRepositoryTest.cs" />
+    <Compile Include="Repository\HumanResources\EmployeeAddressRepositoryTest.cs" />
+    <Compile Include="Repository\HumanResources\EmployeeDepartmentHistoryRepositoryTest.cs" />
+    <Compile Include="Repository\HumanResources\EmployeeExtendedRepositoryTest.cs" />
+    <Compile Include="Repository\HumanResources\EmployeePayHistoryRepositoryTest.cs" />
+    <Compile Include="Repository\HumanResources\EmployeeRepositoryTest.cs" />
+    <Compile Include="Repository\HumanResources\JobCandidateRepositoryTest.cs" />
+    <Compile Include="Repository\HumanResources\ShiftRepositoryTest.cs" />
+    <Compile Include="Repository\Person\AddressRepositoryTest.cs" />
+    <Compile Include="Repository\Person\AddressTypeRepositoryTest.cs" />
+    <Compile Include="Repository\Person\ContactRepositoryTest.cs" />
+    <Compile Include="Repository\Person\ContactTypeRepositoryTest.cs" />
+    <Compile Include="Repository\Person\CountryRegionRepositoryTest.cs" />
+    <Compile Include="Repository\Person\StateProvinceRepositoryTest.cs" />
+    <Compile Include="Repository\Production\BillOfMaterialRepositoryTest.cs" />
+    <Compile Include="Repository\Production\CultureRepositoryTest.cs" />
+    <Compile Include="Repository\Production\DocumentRepositoryTest.cs" />
+    <Compile Include="Repository\Production\IllustrationRepositoryTest.cs" />
+    <Compile Include="Repository\Production\LocationRepositoryTest.cs" />
+    <Compile Include="Repository\Production\ProductCategoryRepositoryTest.cs" />
+    <Compile Include="Repository\Production\ProductCostHistoryRepositoryTest.cs" />
+    <Compile Include="Repository\Production\ProductDescriptionRepositoryTest.cs" />
+    <Compile Include="Repository\Production\ProductDocumentRepositoryTest.cs" />
+    <Compile Include="Repository\Production\ProductInventoryRepositoryTest.cs" />
+    <Compile Include="Repository\Production\ProductListPriceHistoryRepositoryTest.cs" />
+    <Compile Include="Repository\Production\ProductModelIllustrationRepositoryTest.cs" />
+    <Compile Include="Repository\Production\ProductModelProductDescriptionCultureRepositoryTest.cs" />
+    <Compile Include="Repository\Production\ProductModelRepositoryTest.cs" />
+    <Compile Include="Repository\Production\ProductPhotoRepositoryTest.cs" />
+    <Compile Include="Repository\Production\ProductProductPhotoRepositoryTest.cs" />
+    <Compile Include="Repository\Production\ProductRepositoryTest.cs" />
+    <Compile Include="Repository\Production\ProductReviewRepositoryTest.cs" />
+    <Compile Include="Repository\Production\ProductSubcategoryRepositoryTest.cs" />
+    <Compile Include="Repository\Production\ScrapReasonRepositoryTest.cs" />
+    <Compile Include="Repository\Production\TransactionHistoryArchiveRepositoryTest.cs" />
+    <Compile Include="Repository\Production\TransactionHistoryRepositoryTest.cs" />
+    <Compile Include="Repository\Production\UnitMeasureRepositoryTest.cs" />
+    <Compile Include="Repository\Production\WorkOrderRepositoryTest.cs" />
+    <Compile Include="Repository\Production\WorkOrderRoutingRepositoryTest.cs" />
+    <Compile Include="Repository\Purchasing\ProductVendorRepositoryTest.cs" />
+    <Compile Include="Repository\Purchasing\PurchaseOrderDetailRepositoryTest.cs" />
+    <Compile Include="Repository\Purchasing\PurchaseOrderHeaderRepositoryTest.cs" />
+    <Compile Include="Repository\Purchasing\ShipMethodRepositoryTest.cs" />
+    <Compile Include="Repository\Purchasing\VendorAddressRepositoryTest.cs" />
+    <Compile Include="Repository\Purchasing\VendorContactRepositoryTest.cs" />
+    <Compile Include="Repository\Purchasing\VendorRepositoryTest.cs" />
+    <Compile Include="Repository\Sales\ContactCreditCardRepositoryTest.cs" />
+    <Compile Include="Repository\Sales\CountryRegionCurrencyRepositoryTest.cs" />
+    <Compile Include="Repository\Sales\CreditCardRepositoryTest.cs" />
+    <Compile Include="Repository\Sales\CurrencyRateRepositoryTest.cs" />
+    <Compile Include="Repository\Sales\CurrencyRepositoryTest.cs" />
+    <Compile Include="Repository\Sales\CustomerAddressRepositoryTest.cs" />
+    <Compile Include="Repository\Sales\CustomerRepositoryTest.cs" />
+    <Compile Include="Repository\Sales\IndividualRepositoryTest.cs" />
+    <Compile Include="Repository\Sales\SalesOrderDetailRepositoryTest.cs" />
+    <Compile Include="Repository\Sales\SalesOrderHeaderRepositoryTest.cs" />
+    <Compile Include="Repository\Sales\SalesOrderHeaderSalesReasonRepositoryTest.cs" />
+    <Compile Include="Repository\Sales\SalesPersonQuotaHistoryRepositoryTest.cs" />
+    <Compile Include="Repository\Sales\SalesPersonRepositoryTest.cs" />
+    <Compile Include="Repository\Sales\SalesReasonRepositoryTest.cs" />
+    <Compile Include="Repository\Sales\SalesTaxRateRepositoryTest.cs" />
+    <Compile Include="Repository\Sales\SalesTerritoryHistoryRepositoryTest.cs" />
+    <Compile Include="Repository\Sales\SalesTerritoryRepositoryTest.cs" />
+    <Compile Include="Repository\Sales\ShoppingCartItemRepositoryTest.cs" />
+    <Compile Include="Repository\Sales\SpecialOfferProductRepositoryTest.cs" />
+    <Compile Include="Repository\Sales\SpecialOfferRepositoryTest.cs" />
+    <Compile Include="Repository\Sales\StoreContactRepositoryTest.cs" />
+    <Compile Include="Repository\Sales\StoreRepositoryTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Model\AdventureWorks.Model.csproj">
@@ -61,6 +162,15 @@
       <Project>{003dbc63-dda6-47f3-863e-73b040d7dba4}</Project>
       <Name>AdventureWorks.Repository</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Utils\AdventureWorks2008.bak">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="TestData\" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
