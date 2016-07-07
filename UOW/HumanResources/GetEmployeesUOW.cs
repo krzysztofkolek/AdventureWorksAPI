@@ -5,7 +5,8 @@
     using EntityClasses.HumanResources;
     using Main;
     using Model.HumanResources;
-    using Repository.Repository.HumanResources;
+    using Repository.HumanResources;
+    using AdventureWorks.Repository.HumanResources;
 
     public class GetEmployeesUOW : BaseUOW<GetEmployeesViewModel>
     {

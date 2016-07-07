@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30723.0
+VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventureWorks.Model", "Model\AdventureWorks.Model.csproj", "{2B4644A3-C06D-4520-AD71-593676B79212}"
 EndProject
@@ -24,6 +24,13 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventureWorks.RestClient", "AdventureWorks.RestClient\AdventureWorks.RestClient.csproj", "{F251F7EB-DCB3-4FE4-9A10-31942EEF8D99}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventureWorks.Repository.Extension.Model", "AdventureWorks.Repository.Extension.Model\AdventureWorks.Repository.Extension.Model.csproj", "{44B13F9E-7B33-439B-B49B-2EEAA210C4C4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{D5E5FF6F-B983-4509-9970-2166D3BB208B}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventureWorks.Utils", "AdventureWorks.Utils\AdventureWorks.Utils.csproj", "{A40EA110-3716-4E66-85BD-BED4EC3DBBBF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +82,10 @@ Global
 		{44B13F9E-7B33-439B-B49B-2EEAA210C4C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{44B13F9E-7B33-439B-B49B-2EEAA210C4C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{44B13F9E-7B33-439B-B49B-2EEAA210C4C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A40EA110-3716-4E66-85BD-BED4EC3DBBBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A40EA110-3716-4E66-85BD-BED4EC3DBBBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A40EA110-3716-4E66-85BD-BED4EC3DBBBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A40EA110-3716-4E66-85BD-BED4EC3DBBBF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
