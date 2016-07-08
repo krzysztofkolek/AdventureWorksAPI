@@ -23,6 +23,15 @@
             }
         }
 
+        public void SerializeAndStripFromToPlainTypes(T input, String path)
+        {
+            T dataStripped = Strip(input);
+            using (var writer = new FileStream(path, FileMode.Create))
+            {
+                _serializer.Serialize(writer, input);
+            }
+        }
+
         public T Deserialize(String path)
         {
             T type;
@@ -31,6 +40,21 @@
                 type = _serializer.Deserialize(reader) as T;
             }
             return type;
+        }
+
+        private T Strip(T input)
+        {
+            T temp = input;
+
+            var props = temp.GetType().GetProperties();
+            foreach (var prop in props)
+            {
+                //if(prop.typ)
+                //{
+                //}
+            }
+
+            return input;
         }
     }
 }
