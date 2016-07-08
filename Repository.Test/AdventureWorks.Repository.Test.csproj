@@ -154,6 +154,10 @@
     <Compile Include="Repository\Sales\StoreRepositoryTest.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AdventureWorks.Utils\AdventureWorks.Utils.csproj">
+      <Project>{a40ea110-3716-4e66-85bd-bed4ec3dbbbf}</Project>
+      <Name>AdventureWorks.Utils</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Model\AdventureWorks.Model.csproj">
       <Project>{2b4644a3-c06d-4520-ad71-593676b79212}</Project>
       <Name>AdventureWorks.Model</Name>

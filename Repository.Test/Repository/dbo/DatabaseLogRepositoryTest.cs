@@ -9,19 +9,44 @@
     [Category("dbo")]
     public class DatabaseLogRepositoryTest : BaseRepositoryTest<DatabaseLog, DatabaseLogRepositoryTest>
     {
-        public override string DataFileName()
+
+        [Test]
+        [Order(1)]
+        public void DatabaseLogRepositoryTest_Insert()
         {
-            throw new System.NotImplementedException();
+            BaseInsert();
         }
 
-        public override string DataCategory()
+        [Test]
+        [Order(2)]
+        public void DatabaseLogRepositoryTest_GetById()
         {
-            throw new System.NotImplementedException();
+            BaseGetById();
         }
 
-        public override int GetObjectId()
+        [Test]
+        [Order(3)]
+        public void DatabaseLogRepositoryTest_SearchFor()
         {
-            throw new System.NotImplementedException();
+            BaseSearchFor();
+        }
+
+        [Test]
+        [Order(4)]
+        public void DatabaseLogRepositoryTest_GetAll()
+        {
+            BaseGetAll();
+        }
+
+        [Test]
+        [Order(5)]
+        public void DatabaseLogRepositoryTest_Delete()
+        {
+            BaseDelete();
+        }
+        public override TestContext GetTestContext()
+        {
+            return TestContext.CurrentContext;
         }
 
         public override System.Linq.Expressions.Expression<System.Func<DatabaseLog, bool>> SearchForExpresion()
