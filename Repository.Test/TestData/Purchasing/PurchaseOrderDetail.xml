@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<PurchaseOrderDetail xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <DueDate>0001-01-01T00:00:00</DueDate>
+  <LineTotal>0</LineTotal>
+  <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+  <OrderQty>0</OrderQty>
+  <PurchaseOrderDetailId>0</PurchaseOrderDetailId>
+  <ReceivedQty>0</ReceivedQty>
+  <RejectedQty>0</RejectedQty>
+  <StockedQty>0</StockedQty>
+  <UnitPrice>0</UnitPrice>
+</PurchaseOrderDetail>

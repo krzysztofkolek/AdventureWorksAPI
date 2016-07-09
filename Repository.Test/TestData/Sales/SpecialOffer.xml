@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<SpecialOffer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <DiscountPct>0</DiscountPct>
+  <EndDate>0001-01-01T00:00:00</EndDate>
+  <MaxQty xsi:nil="true" />
+  <MinQty>0</MinQty>
+  <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+  <Rowguid>00000000-0000-0000-0000-000000000000</Rowguid>
+  <SpecialOfferId>0</SpecialOfferId>
+  <StartDate>0001-01-01T00:00:00</StartDate>
+</SpecialOffer>

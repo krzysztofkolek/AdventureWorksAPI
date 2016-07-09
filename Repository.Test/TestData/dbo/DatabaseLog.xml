@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<DatabaseLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <DatabaseUser>dbo</DatabaseUser>
+  <Event>CREATE_TABLE</Event>
+  <Object>ErrorLog</Object>
+  <PostTime>2009-08-23T22:07:55</PostTime>
+  <Schema>dbo</Schema>
+  <Tsql>CREATE TABLE [dbo].[ErrorLog](
+    [ErrorLogID] [int] IDENTITY (1, 1) NOT NULL,
+    [ErrorTime] [datetime] NOT NULL CONSTRAINT [DF_ErrorLog_ErrorTime] DEFAULT (GETDATE()),
+    [UserName] [sysname] NOT NULL, 
+    [ErrorNumber] [int] NOT NULL, 
+    [ErrorSeverity] [int] NULL, 
+    [ErrorState] [int] NULL, 
+    [ErrorProcedure] [nvarchar](126) NULL, 
+    [ErrorLine] [int] NULL, 
+    [ErrorMessage] [nvarchar](4000) NOT NULL
+) ON [PRIMARY];
+</Tsql>
+  <XmlEvent>&lt;EVENT_INSTANCE&gt;&lt;EventType&gt;CREATE_TABLE&lt;/EventType&gt;&lt;PostTime&gt;2009-08-23T22:07:55.373&lt;/PostTime&gt;&lt;SPID&gt;55&lt;/SPID&gt;&lt;ServerName&gt;MMSQL&lt;/ServerName&gt;&lt;LoginName&gt;AUTORIDADE NT\SYSTEM&lt;/LoginName&gt;&lt;UserName&gt;dbo&lt;/UserName&gt;&lt;DatabaseName&gt;AdventureWorks&lt;/DatabaseName&gt;&lt;SchemaName&gt;dbo&lt;/SchemaName&gt;&lt;ObjectName&gt;ErrorLog&lt;/ObjectName&gt;&lt;ObjectType&gt;TABLE&lt;/ObjectType&gt;&lt;TSQLCommand&gt;&lt;SetOptions ANSI_NULLS="ON" ANSI_NULL_DEFAULT="ON" ANSI_PADDING="ON" QUOTED_IDENTIFIER="ON" ENCRYPTED="FALSE" /&gt;&lt;CommandText&gt;CREATE TABLE [dbo].[ErrorLog](
+    [ErrorLogID] [int] IDENTITY (1, 1) NOT NULL,
+    [ErrorTime] [datetime] NOT NULL CONSTRAINT [DF_ErrorLog_ErrorTime] DEFAULT (GETDATE()),
+    [UserName] [sysname] NOT NULL, 
+    [ErrorNumber] [int] NOT NULL, 
+    [ErrorSeverity] [int] NULL, 
+    [ErrorState] [int] NULL, 
+    [ErrorProcedure] [nvarchar](126) NULL, 
+    [ErrorLine] [int] NULL, 
+    [ErrorMessage] [nvarchar](4000) NOT NULL
+) ON [PRIMARY];
+&lt;/CommandText&gt;&lt;/TSQLCommand&gt;&lt;/EVENT_INSTANCE&gt;</XmlEvent>
+</DatabaseLog>

@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<AddressType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <AddressTypeId>0</AddressTypeId>
+  <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+  <Rowguid>00000000-0000-0000-0000-000000000000</Rowguid>
+</AddressType>

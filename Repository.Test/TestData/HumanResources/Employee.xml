@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<Employee xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <BirthDate>0001-01-01T00:00:00</BirthDate>
+  <CurrentFlag>false</CurrentFlag>
+  <EmployeeId>0</EmployeeId>
+  <HireDate>0001-01-01T00:00:00</HireDate>
+  <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+  <Rowguid>00000000-0000-0000-0000-000000000000</Rowguid>
+  <SalariedFlag>false</SalariedFlag>
+  <SickLeaveHours>0</SickLeaveHours>
+  <VacationHours>0</VacationHours>
+</Employee>

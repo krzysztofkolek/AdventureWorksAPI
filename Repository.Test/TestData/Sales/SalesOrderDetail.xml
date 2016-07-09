@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<SalesOrderDetail xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <LineTotal>0</LineTotal>
+  <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+  <OrderQty>0</OrderQty>
+  <Rowguid>00000000-0000-0000-0000-000000000000</Rowguid>
+  <SalesOrderDetailId>0</SalesOrderDetailId>
+  <UnitPrice>0</UnitPrice>
+  <UnitPriceDiscount>0</UnitPriceDiscount>
+</SalesOrderDetail>

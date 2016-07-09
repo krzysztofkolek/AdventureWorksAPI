@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<Product xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <DaysToManufacture>0</DaysToManufacture>
+  <DiscontinuedDate xsi:nil="true" />
+  <FinishedGoodsFlag>false</FinishedGoodsFlag>
+  <ListPrice>0</ListPrice>
+  <MakeFlag>false</MakeFlag>
+  <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+  <ProductId>0</ProductId>
+  <ReorderPoint>0</ReorderPoint>
+  <Rowguid>00000000-0000-0000-0000-000000000000</Rowguid>
+  <SafetyStockLevel>0</SafetyStockLevel>
+  <SellEndDate xsi:nil="true" />
+  <SellStartDate>0001-01-01T00:00:00</SellStartDate>
+  <StandardCost>0</StandardCost>
+  <Weight xsi:nil="true" />
+</Product>

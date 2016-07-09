@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<Contact xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ContactId>0</ContactId>
+  <EmailPromotion>0</EmailPromotion>
+  <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+  <NameStyle>false</NameStyle>
+  <Rowguid>00000000-0000-0000-0000-000000000000</Rowguid>
+</Contact>
