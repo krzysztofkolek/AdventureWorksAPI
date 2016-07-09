@@ -1,17 +1,16 @@
-﻿
-namespace AdventureWorks.Repository.Test.Model.Person
+﻿namespace AdventureWorks.Repository.Test.Model.Person
 {
     using Sales;
 
-	public class StateProvince
-	{
-		public CountryRegion _countryRegion{ get; set; }
-		public SalesTerritory _salesTerritory{ get; set; }
-		public System.Boolean _isOnlyStateProvinceFlag{ get; set; }
-		public System.DateTime _modifiedDate{ get; set; }
-		public System.String _name{ get; set; }
-		public System.Guid _rowguid{ get; set; }
-		public System.String _stateProvinceCode{ get; set; }
-		public System.Int32 _stateProvinceId{ get; set; }
-	}
+    public class StateProvince
+    {
+        public CountryRegion CountryRegion { get; set; }
+        public SalesTerritory SalesTerritory { get; set; }
+        public System.Boolean IsOnlyStateProvinceFlag { get; set; }
+        public System.DateTime ModifiedDate { get; set; }
+        public System.String Name { get; set; }
+        public System.Guid Rowguid { get; set; }
+        public System.String StateProvinceCode { get; set; }
+        public System.Int32 StateProvinceId { get; set; }
+    }
 }

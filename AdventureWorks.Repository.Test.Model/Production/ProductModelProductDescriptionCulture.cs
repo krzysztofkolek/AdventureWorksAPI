@@ -2,9 +2,9 @@
 {
 	public class ProductModelProductDescriptionCulture
 	{
-		public Culture _culture{ get; set; }
-		public ProductDescription _productDescription{ get; set; }
-		public ProductModel _productModel{ get; set; }
-		public System.DateTime _modifiedDate{ get; set; }	
+		public Culture Culture{ get; set; }
+		public ProductDescription ProductDescription{ get; set; }
+		public ProductModel ProductModel{ get; set; }
+		public System.DateTime ModifiedDate{ get; set; }	
 	}
 }

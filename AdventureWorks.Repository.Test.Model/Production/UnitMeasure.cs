@@ -6,8 +6,8 @@
 
 	public class UnitMeasure
 	{
-		public System.DateTime _modifiedDate{ get; set; }
-		public System.String _name{ get; set; }
-		public System.String _unitMeasureCode{ get; set; }
+		public System.DateTime ModifiedDate{ get; set; }
+		public System.String Name{ get; set; }
+		public System.String UnitMeasureCode{ get; set; }
 	}
 }

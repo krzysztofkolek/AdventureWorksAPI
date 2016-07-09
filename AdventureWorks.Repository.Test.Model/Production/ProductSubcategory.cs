@@ -5,10 +5,10 @@
 
 	public class ProductSubcategory
 	{
-		public ProductCategory _productCategory{ get; set; }
-		public System.DateTime _modifiedDate{ get; set; }
-		public System.String _name{ get; set; }
-		public System.Int32 _productSubcategoryId{ get; set; }
-		public System.Guid _rowguid{ get; set; }
+		public ProductCategory ProductCategory{ get; set; }
+		public System.DateTime ModifiedDate{ get; set; }
+		public System.String Name{ get; set; }
+		public System.Int32 ProductSubcategoryId{ get; set; }
+		public System.Guid Rowguid{ get; set; }
 	}
 }

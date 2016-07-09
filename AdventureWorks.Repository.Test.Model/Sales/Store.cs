@@ -2,12 +2,12 @@
 {
 	public class Store
 	{
-		public Customer _customer{ get; set; }
-		public SalesPerson _salesPerson{ get; set; }
-		public System.Int32 _customerId{ get; set; }
-		public System.String _demographics{ get; set; }
-		public System.DateTime _modifiedDate{ get; set; }
-		public System.String _name{ get; set; }
-		public System.Guid _rowguid{ get; set; }
+		public Customer Customer{ get; set; }
+		public SalesPerson SalesPerson{ get; set; }
+		public System.Int32 CustomerId{ get; set; }
+		public System.String Demographics{ get; set; }
+		public System.DateTime ModifiedDate{ get; set; }
+		public System.String Name{ get; set; }
+		public System.Guid Rowguid{ get; set; }
 	}
 }

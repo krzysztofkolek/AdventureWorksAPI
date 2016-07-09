@@ -5,11 +5,11 @@
 
 	public class ShoppingCartItem
 	{
-		public Product _product{ get; set; }
-		public System.DateTime _dateCreated{ get; set; }
-		public System.DateTime _modifiedDate{ get; set; }
-		public System.Int32 _quantity{ get; set; }
-		public System.String _shoppingCartId{ get; set; }
-		public System.Int32 _shoppingCartItemId{ get; set; }
+		public Product Product{ get; set; }
+		public System.DateTime DateCreated{ get; set; }
+		public System.DateTime ModifiedDate{ get; set; }
+		public System.Int32 Quantity{ get; set; }
+		public System.String ShoppingCartId{ get; set; }
+		public System.Int32 ShoppingCartItemId{ get; set; }
 	}
 }

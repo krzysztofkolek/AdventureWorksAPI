@@ -2,10 +2,10 @@
 {
 	public class SalesPersonQuotaHistory
 	{
-		public SalesPerson _salesPerson{ get; set; }
-		public System.DateTime _modifiedDate{ get; set; }
-		public System.DateTime _quotaDate{ get; set; }
-		public System.Guid _rowguid{ get; set; }
-		public System.Decimal _salesQuota{ get; set; }
+		public SalesPerson SalesPerson{ get; set; }
+		public System.DateTime ModifiedDate{ get; set; }
+		public System.DateTime QuotaDate{ get; set; }
+		public System.Guid Rowguid{ get; set; }
+		public System.Decimal SalesQuota{ get; set; }
 	}
 }

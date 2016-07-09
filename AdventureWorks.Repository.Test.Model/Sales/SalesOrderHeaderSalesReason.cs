@@ -2,8 +2,8 @@
 {
 	public class SalesOrderHeaderSalesReason
 	{
-		public SalesOrderHeader _salesOrderHeader{ get; set; }
-		public SalesReason _salesReason{ get; set; }
-		public System.DateTime _modifiedDate{ get; set; }
+		public SalesOrderHeader SalesOrderHeader{ get; set; }
+		public SalesReason SalesReason{ get; set; }
+		public System.DateTime ModifiedDate{ get; set; }
 	}
 }

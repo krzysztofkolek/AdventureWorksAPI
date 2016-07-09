@@ -4,8 +4,8 @@
 
 	public class CountryRegionCurrency
 	{
-		public CountryRegion _countryRegion{ get; set; }
-		public Currency _currency{ get; set; }
-		public System.DateTime _modifiedDate{ get; set; }
+		public CountryRegion CountryRegion{ get; set; }
+		public Currency Currency{ get; set; }
+		public System.DateTime ModifiedDate{ get; set; }
 	}
 }

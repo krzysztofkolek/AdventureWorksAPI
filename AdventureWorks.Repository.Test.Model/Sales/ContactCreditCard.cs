@@ -4,8 +4,8 @@
 
 	public class ContactCreditCard
 	{
-		public Contact _contact{ get; set; }
-		public CreditCard _creditCard{ get; set; }
-		public System.DateTime _modifiedDate{ get; set; }
+		public Contact Contact{ get; set; }
+		public CreditCard CreditCard{ get; set; }
+		public System.DateTime ModifiedDate{ get; set; }
 	}
 }

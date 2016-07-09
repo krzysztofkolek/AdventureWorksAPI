@@ -4,10 +4,10 @@
 
     public class StoreContact
     {
-        public Contact _contact { get; set; }
-        public ContactType _contactType { get; set; }
-        public Store _store { get; set; }
-        public System.DateTime _modifiedDate { get; set; }
-        public System.Guid _rowguid { get; set; }
+        public Contact Contact { get; set; }
+        public ContactType ContactType { get; set; }
+        public Store Store { get; set; }
+        public System.DateTime ModifiedDate { get; set; }
+        public System.Guid Rowguid { get; set; }
     }
 }

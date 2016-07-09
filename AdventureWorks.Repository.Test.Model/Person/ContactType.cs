@@ -1,12 +1,10 @@
 ﻿namespace AdventureWorks.Repository.Test.Model.Person
 {
-    using Purchasing;
-    using Sales;
 
-	public class ContactType
-	{
-		public System.Int32 _contactTypeId{ get; set; }
-		public System.DateTime _modifiedDate{ get; set; }
-		public System.String _name{ get; set; }
-	}
+    public class ContactType
+    {
+        public System.Int32 ContactTypeId { get; set; }
+        public System.DateTime CodifiedDate { get; set; }
+        public System.String Name { get; set; }
+    }
 }

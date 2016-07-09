@@ -5,13 +5,13 @@
 
 	public class ProductReview
 	{
-		public Product _product{ get; set; }
-		public System.String _comments{ get; set; }
-		public System.String _emailAddress{ get; set; }
-		public System.DateTime _modifiedDate{ get; set; }
-		public System.Int32 _productReviewId{ get; set; }
-		public System.Int32 _rating{ get; set; }
-		public System.DateTime _reviewDate{ get; set; }
-		public System.String _reviewerName{ get; set; }
+		public Product Product{ get; set; }
+		public System.String Comments{ get; set; }
+		public System.String EmailAddress{ get; set; }
+		public System.DateTime ModifiedDate{ get; set; }
+		public System.Int32 ProductReviewId{ get; set; }
+		public System.Int32 Rating{ get; set; }
+		public System.DateTime ReviewDate{ get; set; }
+		public System.String ReviewerName{ get; set; }
 	}
 }

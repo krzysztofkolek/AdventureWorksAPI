@@ -6,16 +6,16 @@
 
 	public class ProductVendor
 	{
-		public Product _product{ get; set; }
-		public UnitMeasure _unitMeasure{ get; set; }
-		public Vendor _vendor{ get; set; }
-		public System.Int32 _averageLeadTime{ get; set; }
-		public Nullable<System.Decimal> _lastReceiptCost{ get; set; }
-		public Nullable<System.DateTime> _lastReceiptDate{ get; set; }
-		public System.Int32 _maxOrderQty{ get; set; }
-		public System.Int32 _minOrderQty{ get; set; }
-		public System.DateTime _modifiedDate{ get; set; }
-		public Nullable<System.Int32> _onOrderQty{ get; set; }
-		public System.Decimal _standardPrice{ get; set; }
+		public Product Product{ get; set; }
+		public UnitMeasure UnitMeasure{ get; set; }
+		public Vendor Vendor{ get; set; }
+		public System.Int32 AverageLeadTime{ get; set; }
+		public Nullable<System.Decimal> LastReceiptCost{ get; set; }
+		public Nullable<System.DateTime> LastReceiptDate{ get; set; }
+		public System.Int32 MaxOrderQty{ get; set; }
+		public System.Int32 MinOrderQty{ get; set; }
+		public System.DateTime ModifiedDate{ get; set; }
+		public Nullable<System.Int32> OnOrderQty{ get; set; }
+		public System.Decimal StandardPrice{ get; set; }
 	}
 }

@@ -4,11 +4,11 @@
 
     public class SalesTerritoryHistory
     {
-        public SalesPerson _salesPerson{ get; set; }
-        public SalesTerritory _salesTerritory{ get; set; }
-        public Nullable<System.DateTime> _endDate{ get; set; }
-        public System.DateTime _modifiedDate{ get; set; }
-        public System.Guid _rowguid{ get; set; }
-        public System.DateTime _startDate{ get; set; }
+        public SalesPerson SalesPerson{ get; set; }
+        public SalesTerritory SalesTerritory{ get; set; }
+        public Nullable<System.DateTime> EndDate{ get; set; }
+        public System.DateTime ModifiedDate{ get; set; }
+        public System.Guid Rowguid{ get; set; }
+        public System.DateTime StartDate{ get; set; }
     }
 }

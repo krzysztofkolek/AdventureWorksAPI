@@ -5,9 +5,9 @@
 
 	public class ProductProductPhoto
 	{
-		public Product _product{ get; set; }
-		public ProductPhoto _productPhoto{ get; set; }
-		public System.DateTime _modifiedDate{ get; set; }
-		public System.Boolean _primary{ get; set; }
+		public Product Product{ get; set; }
+		public ProductPhoto ProductPhoto{ get; set; }
+		public System.DateTime ModifiedDate{ get; set; }
+		public System.Boolean Primary{ get; set; }
 	}
 }

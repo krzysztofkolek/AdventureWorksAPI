@@ -2,13 +2,13 @@
 {
     public class Address
     {
-        public StateProvince _stateProvince{ get; set; }
-        public System.Int32 _addressId{ get; set; }
-        public System.String _addressLine1{ get; set; }
-        public System.String _addressLine2{ get; set; }
-        public System.String _city{ get; set; }
-        public System.DateTime _modifiedDate{ get; set; }
-        public System.String _postalCode{ get; set; }
-        public System.Guid _rowguid{ get; set; }
+        public StateProvince StateProvince { get; set; }
+        public System.Int32 AddressId { get; set; }
+        public System.String AddressLine1 { get; set; }
+        public System.String AddressLine2 { get; set; }
+        public System.String City { get; set; }
+        public System.DateTime ModifiedDate { get; set; }
+        public System.String PostalCode { get; set; }
+        public System.Guid Rowguid { get; set; }
     }
 }

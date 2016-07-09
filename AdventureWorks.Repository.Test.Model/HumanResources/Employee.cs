@@ -7,22 +7,22 @@
 
     public class Employee
     {
-        public Employee _employeeNav{ get; set; }
-        public Contact _contact{ get; set; }
-        public SalesPerson _salesPerson{ get; set; }
-        public DateTime _birthDate{ get; set; }
-        public Boolean _currentFlag{ get; set; }
-        public Int32 _employeeId{ get; set; }
-        public String _gender{ get; set; }
-        public DateTime _hireDate{ get; set; }
-        public String _loginId{ get; set; }
-        public String _maritalStatus{ get; set; }
-        public DateTime _modifiedDate{ get; set; }
-        public String _nationalIdnumber{ get; set; }
-        public Guid _rowguid{ get; set; }
-        public Boolean _salariedFlag{ get; set; }
-        public Int16 _sickLeaveHours{ get; set; }
-        public String _title{ get; set; }
-        public Int16 _vacationHours{ get; set; }
+        public Employee EmployeeNav { get; set; }
+        public Contact Contact { get; set; }
+        public SalesPerson SalesPerson { get; set; }
+        public DateTime BirthDate { get; set; }
+        public Boolean CurrentFlag { get; set; }
+        public Int32 EmployeeId { get; set; }
+        public String Gender { get; set; }
+        public DateTime HireDate { get; set; }
+        public String LoginId { get; set; }
+        public String MaritalStatus { get; set; }
+        public DateTime ModifiedDate { get; set; }
+        public String NationalIdnumber { get; set; }
+        public Guid Rowguid { get; set; }
+        public Boolean SalariedFlag { get; set; }
+        public Int16 SickLeaveHours { get; set; }
+        public String Title { get; set; }
+        public Int16 VacationHours { get; set; }
     }
 }

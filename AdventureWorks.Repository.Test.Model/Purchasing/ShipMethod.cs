@@ -4,11 +4,11 @@
 
 	public class ShipMethod
 	{
-		public System.DateTime _modifiedDate{ get; set; }
-		public System.String _name{ get; set; }
-		public System.Guid _rowguid{ get; set; }
-		public System.Decimal _shipBase{ get; set; }
-		public System.Int32 _shipMethodId{ get; set; }
-		public System.Decimal _shipRate{ get; set; }
+		public System.DateTime ModifiedDate{ get; set; }
+		public System.String Name{ get; set; }
+		public System.Guid Rowguid{ get; set; }
+		public System.Decimal ShipBase{ get; set; }
+		public System.Int32 ShipMethodId{ get; set; }
+		public System.Decimal ShipRate{ get; set; }
 	}
 }

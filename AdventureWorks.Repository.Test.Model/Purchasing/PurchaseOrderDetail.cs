@@ -5,16 +5,16 @@
 
 	public class PurchaseOrderDetail
 	{
-		public Product _product{ get; set; }
-		public PurchaseOrderHeader _purchaseOrderHeader{ get; set; }
-		public System.DateTime _dueDate{ get; set; }
-		public System.Decimal _lineTotal{ get; set; }
-		public System.DateTime _modifiedDate{ get; set; }
-		public System.Int16 _orderQty{ get; set; }
-		public System.Int32 _purchaseOrderDetailId{ get; set; }
-		public System.Decimal _receivedQty{ get; set; }
-		public System.Decimal _rejectedQty{ get; set; }
-		public System.Decimal _stockedQty{ get; set; }
-		public System.Decimal _unitPrice{ get; set; }
+		public Product Product{ get; set; }
+		public PurchaseOrderHeader PurchaseOrderHeader{ get; set; }
+		public System.DateTime DueDate{ get; set; }
+		public System.Decimal LineTotal{ get; set; }
+		public System.DateTime ModifiedDate{ get; set; }
+		public System.Int16 OrderQty{ get; set; }
+		public System.Int32 PurchaseOrderDetailId{ get; set; }
+		public System.Decimal ReceivedQty{ get; set; }
+		public System.Decimal RejectedQty{ get; set; }
+		public System.Decimal StockedQty{ get; set; }
+		public System.Decimal UnitPrice{ get; set; }
 	}
 }

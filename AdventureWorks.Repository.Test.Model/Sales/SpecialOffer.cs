@@ -4,16 +4,16 @@
 
 	public class SpecialOffer
 	{
-		public System.String _category{ get; set; }
-		public System.String _description{ get; set; }
-		public System.Decimal _discountPct{ get; set; }
-		public System.DateTime _endDate{ get; set; }
-		public Nullable<System.Int32> _maxQty{ get; set; }
-		public System.Int32 _minQty{ get; set; }
-		public System.DateTime _modifiedDate{ get; set; }
-		public System.Guid _rowguid{ get; set; }
-		public System.Int32 _specialOfferId{ get; set; }
-		public System.DateTime _startDate{ get; set; }
-		public System.String _type{ get; set; }
+		public System.String Category{ get; set; }
+		public System.String Description{ get; set; }
+		public System.Decimal DiscountPct{ get; set; }
+		public System.DateTime EndDate{ get; set; }
+		public Nullable<System.Int32> MaxQty{ get; set; }
+		public System.Int32 MinQty{ get; set; }
+		public System.DateTime ModifiedDate{ get; set; }
+		public System.Guid Rowguid{ get; set; }
+		public System.Int32 SpecialOfferId{ get; set; }
+		public System.DateTime StartDate{ get; set; }
+		public System.String Type{ get; set; }
 	}
 }

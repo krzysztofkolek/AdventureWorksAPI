@@ -2,9 +2,9 @@
 {
 	public class SalesReason
 	{
-		public System.DateTime _modifiedDate{ get; set; }
-		public System.String _name{ get; set; }
-		public System.String _reasonType{ get; set; }
-		public System.Int32 _salesReasonId{ get; set; }
+		public System.DateTime ModifiedDate{ get; set; }
+		public System.String Name{ get; set; }
+		public System.String ReasonType{ get; set; }
+		public System.Int32 SalesReasonId{ get; set; }
 	}
 }

@@ -2,13 +2,13 @@
 {
 	public class Customer
 	{
-		public Individual _individual{ get; set; }
-		public SalesTerritory _salesTerritory{ get; set; }
-		public Store _store{ get; set; }
-		public System.String _accountNumber{ get; set; }
-		public System.Int32 _customerId{ get; set; }
-		public System.String _customerType{ get; set; }
-		public System.DateTime _modifiedDate{ get; set; }
-		public System.Guid _rowguid{ get; set; }
+		public Individual Individual{ get; set; }
+		public SalesTerritory SalesTerritory{ get; set; }
+		public Store Store{ get; set; }
+		public System.String AccountNumber{ get; set; }
+		public System.Int32 CustomerId{ get; set; }
+		public System.String CustomerType{ get; set; }
+		public System.DateTime ModifiedDate{ get; set; }
+		public System.Guid Rowguid{ get; set; }
 	}
 }

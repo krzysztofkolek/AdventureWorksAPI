@@ -5,11 +5,11 @@
 
 	public class ProductModel
 	{
-		public System.String _catalogDescription{ get; set; }
-		public System.String _instructions{ get; set; }
-		public System.DateTime _modifiedDate{ get; set; }
-		public System.String _name{ get; set; }
-		public System.Int32 _productModelId{ get; set; }
-		public System.Guid _rowguid{ get; set; }
+		public System.String CatalogDescription{ get; set; }
+		public System.String Instructions{ get; set; }
+		public System.DateTime ModifiedDate{ get; set; }
+		public System.String Name{ get; set; }
+		public System.Int32 ProductModelId{ get; set; }
+		public System.Guid Rowguid{ get; set; }
 	}
 }

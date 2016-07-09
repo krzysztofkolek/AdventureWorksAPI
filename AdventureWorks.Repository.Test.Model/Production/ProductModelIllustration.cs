@@ -2,9 +2,9 @@
 {
 	public class ProductModelIllustration
 	{
-		public Illustration _illustration{ get; set; }
-		public ProductModel _productModel{ get; set; }
-		public System.DateTime _modifiedDate{ get; set; }
+		public Illustration Illustration{ get; set; }
+		public ProductModel ProductModel{ get; set; }
+		public System.DateTime ModifiedDate{ get; set; }
 
 	}
 }

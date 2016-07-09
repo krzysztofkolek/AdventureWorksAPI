@@ -5,18 +5,18 @@
 
 	public class PurchaseOrderHeader
 	{
-		public Employee _employee{ get; set; }
-		public ShipMethod _shipMethod{ get; set; }
-		public Vendor _vendor{ get; set; }
-		public System.Decimal _freight{ get; set; }
-		public System.DateTime _modifiedDate{ get; set; }
-		public System.DateTime _orderDate{ get; set; }
-		public System.Int32 _purchaseOrderId{ get; set; }
-		public System.Byte _revisionNumber{ get; set; }
-		public Nullable<System.DateTime> _shipDate{ get; set; }
-		public System.Byte _status{ get; set; }
-		public System.Decimal _subTotal{ get; set; }
-		public System.Decimal _taxAmt{ get; set; }
-		public System.Decimal _totalDue{ get; set; }
+		public Employee Employee{ get; set; }
+		public ShipMethod ShipMethod{ get; set; }
+		public Vendor Vendor{ get; set; }
+		public System.Decimal Freight{ get; set; }
+		public System.DateTime ModifiedDate{ get; set; }
+		public System.DateTime OrderDate{ get; set; }
+		public System.Int32 PurchaseOrderId{ get; set; }
+		public System.Byte RevisionNumber{ get; set; }
+		public Nullable<System.DateTime> ShipDate{ get; set; }
+		public System.Byte Status{ get; set; }
+		public System.Decimal SubTotal{ get; set; }
+		public System.Decimal TaxAmt{ get; set; }
+		public System.Decimal TotalDue{ get; set; }
 	}
 }

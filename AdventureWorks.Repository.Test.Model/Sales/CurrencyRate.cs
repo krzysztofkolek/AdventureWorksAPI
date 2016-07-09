@@ -2,12 +2,12 @@
 {
 	public class CurrencyRate
 	{
-		public Currency _currency{ get; set; }
-		public Currency _currency1{ get; set; }
-		public System.Decimal _averageRate{ get; set; }
-		public System.DateTime _currencyRateDate{ get; set; }
-		public System.Int32 _currencyRateId{ get; set; }
-		public System.Decimal _endOfDayRate{ get; set; }
-		public System.DateTime _modifiedDate{ get; set; }
+		public Currency Currency{ get; set; }
+		public Currency Currency1{ get; set; }
+		public System.Decimal AverageRate{ get; set; }
+		public System.DateTime CurrencyRateDate{ get; set; }
+		public System.Int32 CurrencyRateId{ get; set; }
+		public System.Decimal EndOfDayRate{ get; set; }
+		public System.DateTime ModifiedDate{ get; set; }
     }
 }

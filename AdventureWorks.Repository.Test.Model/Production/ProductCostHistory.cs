@@ -1,15 +1,13 @@
 ﻿namespace AdventureWorks.Repository.Test.Model.Production
 {
-    using Person;
-    using Production;
     using System;
 
-	public class ProductCostHistory
-	{
-		public Product _product{ get; set; }
-		public Nullable<System.DateTime> _endDate{ get; set; }
-		public System.DateTime _modifiedDate{ get; set; }
-		public System.Decimal _standardCost{ get; set; }
-		public System.DateTime _startDate{ get; set; }
-	}
+    public class ProductCostHistory
+    {
+        public Product Product { get; set; }
+        public Nullable<System.DateTime> EndDate { get; set; }
+        public System.DateTime ModifiedDate { get; set; }
+        public System.Decimal StandardCost { get; set; }
+        public System.DateTime StartDate { get; set; }
+    }
 }

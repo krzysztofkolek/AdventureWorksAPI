@@ -2,11 +2,11 @@
 {
 	public class ProductPhoto
 	{
-		public System.Byte[] _largePhoto{ get; set; }
-		public System.String _largePhotoFileName{ get; set; }
-		public System.DateTime _modifiedDate{ get; set; }
-		public System.Int32 _productPhotoId{ get; set; }
-		public System.Byte[] _thumbNailPhoto{ get; set; }
-		public System.String _thumbnailPhotoFileName{ get; set; }
+		public System.Byte[] LargePhoto{ get; set; }
+		public System.String LargePhotoFileName{ get; set; }
+		public System.DateTime ModifiedDate{ get; set; }
+		public System.Int32 ProductPhotoId{ get; set; }
+		public System.Byte[] ThumbNailPhoto{ get; set; }
+		public System.String ThumbnailPhotoFileName{ get; set; }
 	}
 }
