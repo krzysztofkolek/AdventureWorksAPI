@@ -85,13 +85,6 @@
 
                             MethodInfo serializeMethodFromXMLManager = xmlmanagerType.GetMethod("Serialize");
                             serializeMethodFromXMLManager.Invoke(instanceOfXMLManager, new object[] { resultForXML, path });
-
-
-                            //var xmlmanagerType = typeof(XMLManager<>)
-                            //                    .MakeGenericType(dbResult.GetType());
-                            //var instanceOfXMLManager = Activator.CreateInstance(xmlmanagerType);
-                            //MethodInfo serializeMethodFromXMLManager = xmlmanagerType.GetMethod("SerializeAndStripFromToPlainTypes");
-                            //serializeMethodFromXMLManager.Invoke(instanceOfXMLManager, new object[] { dbResult, path });
                         }
                     }
                 }
