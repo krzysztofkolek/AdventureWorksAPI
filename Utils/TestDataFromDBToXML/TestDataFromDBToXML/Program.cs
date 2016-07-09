@@ -2,7 +2,6 @@
 {
     using AdventureWorks.Utils;
     using AdventureWorksAPIPasswordRestarter;
-    using Autofac;
     using NHibernate;
     using System;
     using System.IO;
@@ -13,10 +12,8 @@
     {
         static void Main(string[] args)
         {
-            var builder = new ContainerBuilder();
-            builder.RegisterAssemblyTypes(Assembly.GetEntryAssembly());
-            var container = builder.Build();
-
+            PropertiesFiller filler = new PropertiesFiller();
+            var modelsFromRepositoryTestMOdels = Assembly.LoadFile(Directory.GetCurrentDirectory() + "/AdventureWorks.Repository.Test.Model.dll");
 
             int objectId = 1;
             string @namespace = "AdventureWorks.EntityClasses";
@@ -41,9 +38,20 @@
                                                    .MakeGenericMethod(typeItem);
 
                         dynamic dbResult;
-                        if (((System.Reflection.MemberInfo)(typeItem.GetProperty(idColumnName).PropertyType)).Name.Equals("Int32"))
+                        var idTypeInfo = ((System.Reflection.MemberInfo)(typeItem.GetProperty(idColumnName).PropertyType)).Name;
+                        if (idTypeInfo.Equals("Int32"))
                         {
                             dbResult = method.Invoke(session, new object[] { 1 });
+                        }
+                        else if (idTypeInfo.Equals("Byte"))
+                        {
+                            Byte idByte = 1;
+                            dbResult = method.Invoke(session, new object[] { idByte });
+                        }
+                        else if (idTypeInfo.Equals("String"))
+                        {
+                            String idString = "";
+                            dbResult = method.Invoke(session, new object[] { idString });
                         }
                         else
                         {
@@ -65,12 +73,25 @@
                                 Directory.CreateDirectory(directory);
                             }
 
+                            var modelFromAdventurworksRepositoryModels = modelsFromRepositoryTestMOdels.DefinedTypes
+                                                                          .Where(item => item.Name.Equals(typeItem.Name))
+                                                                          .First();
 
                             var xmlmanagerType = typeof(XMLManager<>)
-                                                .MakeGenericType(dbResult.GetType());
+                                                .MakeGenericType(modelFromAdventurworksRepositoryModels);
                             var instanceOfXMLManager = Activator.CreateInstance(xmlmanagerType);
-                            MethodInfo serializeMethodFromXMLManager = xmlmanagerType.GetMethod("SerializeAndStripFromToPlainTypes");
-                            serializeMethodFromXMLManager.Invoke(instanceOfXMLManager, new object[] { dbResult, path });
+
+                            var resultForXML = filler.CreateNewObject(dbResult, Activator.CreateInstance(modelFromAdventurworksRepositoryModels));
+
+                            MethodInfo serializeMethodFromXMLManager = xmlmanagerType.GetMethod("Serialize");
+                            serializeMethodFromXMLManager.Invoke(instanceOfXMLManager, new object[] { resultForXML, path });
+
+
+                            //var xmlmanagerType = typeof(XMLManager<>)
+                            //                    .MakeGenericType(dbResult.GetType());
+                            //var instanceOfXMLManager = Activator.CreateInstance(xmlmanagerType);
+                            //MethodInfo serializeMethodFromXMLManager = xmlmanagerType.GetMethod("SerializeAndStripFromToPlainTypes");
+                            //serializeMethodFromXMLManager.Invoke(instanceOfXMLManager, new object[] { dbResult, path });
                         }
                     }
                 }

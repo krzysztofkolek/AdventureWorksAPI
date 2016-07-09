@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AdventureWorks.Repository.Test.Model">
+      <HintPath>..\..\..\AdventureWorks.Repository.Test.Model\bin\Debug\AdventureWorks.Repository.Test.Model.dll</HintPath>
+    </Reference>
     <Reference Include="AdventureWorks.Utils">
       <HintPath>..\..\..\AdventureWorks.Utils\bin\Debug\AdventureWorks.Utils.dll</HintPath>
     </Reference>
