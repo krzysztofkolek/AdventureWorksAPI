@@ -1,6 +1,5 @@
 ﻿namespace AdventureWorks.Repository.Test.Main
 {
-    using AdventureWorks.Repository.Main;
     using AdventureWorks.Utils;
     using NUnit.Framework;
     using System;
@@ -26,8 +25,6 @@
         #region Properties
         protected T TestData;
         protected dynamic Repository { get; set; }
-        protected IRepository<T> ReadRepository { get; set; }
-        protected IEditableRepository<T> EditRepository { get; set; }
         protected C Caller { get; set; }
 
         protected int SavedObjectId { get; set; }
