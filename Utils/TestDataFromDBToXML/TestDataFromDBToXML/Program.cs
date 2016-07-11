@@ -83,13 +83,8 @@
 
                             var resultForXML = filler.CreateNewObject(dbResult, Activator.CreateInstance(modelFromAdventurworksRepositoryModels));
 
-                            //MethodInfo serializeMethodFromXMLManager = xmlmanagerType.GetMethod("Serialize");
-                            //serializeMethodFromXMLManager.Invoke(instanceOfXMLManager, new object[] { resultForXML, path });
-
-
-
-                            var setset = filler.DeserializeFromXMLModelToDomainModel(resultForXML, dbResult);
-
+                            MethodInfo serializeMethodFromXMLManager = xmlmanagerType.GetMethod("Serialize");
+                            serializeMethodFromXMLManager.Invoke(instanceOfXMLManager, new object[] { resultForXML, path });
                         }
                     }
                 }
