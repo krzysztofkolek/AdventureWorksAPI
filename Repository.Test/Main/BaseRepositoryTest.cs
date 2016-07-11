@@ -1,20 +1,19 @@
 ﻿namespace AdventureWorks.Repository.Test.Main
 {
-    using AdventureWorks.Repository.dbo;
     using AdventureWorks.Repository.Main;
     using AdventureWorks.Utils;
-    using Autofac;
     using NUnit.Framework;
-    using Rhino.Mocks;
     using System;
     using System.Collections.Generic;
+    using System.Data.SqlClient;
     using System.IO;
     using System.Linq;
     using System.Linq.Expressions;
     using System.Reflection;
 
     /// <summary>
-    /// 
+    /// Generic repository test
+    /// Provides basic functionality for tests that can be overiten or extended. 
     /// </summary>
     /// <typeparam name="T"></typeparam>
     /// <typeparam name="C"></typeparam>
@@ -24,22 +23,38 @@
         where C : class, new()
     {
 
+        #region Properties
         protected T TestData;
-        protected IReadWriteRepository<T> Repository { get; set; }
+        protected IRepository<T> ReadRepository { get; set; }
+        protected IEditableRepository<T> EditRepository { get; set; }
         protected C Caller { get; set; }
 
         protected int SavedObjectId { get; set; }
+        #endregion Properties
 
+        #region Constructor
         public BaseRepositoryTest()
         {
-            var test = DataCategory();
             ReadData();
-            GetObjectId();
+        }
+        #endregion Constructor
+
+        #region Abstract Layer
+        public abstract Expression<System.Func<T, bool>> SearchForExpresion();
+        public abstract void BaseSearchForAsserts(IList<T> input);
+        #endregion Abstract Layer
+
+        #region Virtual Methods
+        /// <summary>
+        /// Method for TestData manipulation
+        /// </summary>
+        protected virtual void DataOverload()
+        {
         }
 
         public virtual TestContext GetTestContext()
         {
-            return null;
+            return TestContext.CurrentContext;
         }
 
         public virtual void ReadData()
@@ -48,19 +63,28 @@
             String dataPath = String.Format("{0}\\{1}", DataCategory(), DataFileName());
             String path = String.Format("{0}{1}", basePath, dataPath);
 
-            var typeItem = typeof(T);
-            var xmlmanagerType = typeof(XMLManager<>)
-                                 .MakeGenericType(typeItem);
-            var instanceOfXMLManager = Activator.CreateInstance(xmlmanagerType);
-            MethodInfo deserializeMethodFromXMLManager = xmlmanagerType.GetMethod("Deserialize");
-            var deserializedObject = deserializeMethodFromXMLManager.Invoke(instanceOfXMLManager, new object[] { path });
+            if (File.Exists(path))
+            {
+                var typeItem = typeof(T);
+                var xmlmanagerType = typeof(XMLManager<>)
+                                     .MakeGenericType(typeItem);
+                var instanceOfXMLManager = Activator.CreateInstance(xmlmanagerType);
+                MethodInfo deserializeMethodFromXMLManager = xmlmanagerType.GetMethod("Deserialize");
+                var deserializedObject = deserializeMethodFromXMLManager.Invoke(instanceOfXMLManager, new object[] { path });
 
-            TestData = deserializedObject as T;
+                TestData = deserializedObject as T;
+            }
+            else
+            {
+                TestData = null;
+            }
         }
+
         public virtual String DataFileName()
         {
             return String.Format("{0}.xml", typeof(C).Name.Replace("RepositoryTest", ""));
         }
+
         public virtual String DataCategory()
         {
             var nameWithNamespace = typeof(C).FullName.Split('.');
@@ -82,65 +106,135 @@
             return SavedObjectId;
         }
 
-        public abstract Expression<System.Func<T, bool>> SearchForExpresion();
-        public abstract void BaseSearchForAsserts(IList<T> input);
-
         public virtual void BaseGetAllAsserts(IList<T> input)
         {
-
         }
 
         public virtual void BaseGetByIdAsserts(T input)
         {
-
         }
 
         public virtual void BaseInsertAsserts(T input)
         {
-
         }
 
         public virtual void BaseDeleteAsserts(T input)
         {
-
         }
 
+        #endregion Virtual Methods
 
+        #region Concreate Methods
+        private void NoDataHandling()
+        {
+            throw new InvalidOperationException();
+        }
+
+        private void RestoreDatabase()
+        {
+            String file = String.Format("{0}\\Utils\\AdventureWorks2008.bak", GetTestContext().TestDirectory);
+            string sql = "Restore Database AdventureWorks FROM DISK ='" + file + "' WITH REPLACE;";
+
+            SqlConnection con = new SqlConnection(@"Data Source=CYSPC\MSSQL2016;Initial Catalog=master;Integrated Security=True;TrustServerCertificate=False;TrustServerCertificate=False");
+            SqlCommand command = new SqlCommand(sql, con);
+
+            con.Open();
+            command.ExecuteNonQuery();
+
+            con.Close();
+        }
+        #endregion Concreate Methods
+
+        #region Test Configuration
+        /// <summary>
+        /// Functionality before each tests
+        /// </summary>
         [SetUp]
         public void Setup()
         {
+            var TestData = typeof(AdventureWorks.EntityClasses.dbo.DatabaseLog);
+            var assModel = Assembly.LoadFile(String.Format("{0}/AdventureWorks.Model.dll", GetTestContext().TestDirectory));
+            Type type = assModel.GetTypes().Where(item => item.Name.Equals(typeof(AdventureWorks.EntityClasses.dbo.DatabaseLog).Name)).First();
+            var constructorInfo = type.GetConstructor(new Type[] { });
+            dynamic instance = constructorInfo.Invoke(null);
+
+            Type t = typeof(T);
+
+            var assRepo = Assembly.LoadFile(String.Format("{0}/AdventureWorks.Repository.dll", GetTestContext().TestDirectory));
+            var typeRepo = assRepo.GetTypes().Where(item => item.Name.StartsWith(t.Name)).First();
+            typeRepo = typeRepo.MakeGenericType(new Type[] { t });
+            var repoInstance = Activator.CreateInstance(typeRepo);
+
+            ReadRepository = repoInstance as IRepository<T>;
+            EditRepository = repoInstance as IEditableRepository<T>;
         }
 
+        /// <summary>
+        /// Functionality before all tests
+        /// </summary>
+        [TestFixtureSetUp]
+        public void SetupBeforeAllTests()
+        {
+            RestoreDatabase();
+        }
 
+        /// <summary>
+        /// Functionality after all tests
+        /// </summary>
+        [TestFixtureTearDown]
+        public void TearDownAfterAllTests()
+        {
+            RestoreDatabase();
+        }
+        #endregion Test Configuration
+
+        #region Virtual Test Methods
         protected virtual void BaseSearchFor()
         {
             if (TestData != null)
             {
-                // ARRANGE
-                var _repository = MockRepository.GenerateMock<T>() as IReadWriteRepository<T>;
+                // ARRANGE                
                 // ACT
-                var result = Repository.SearchFor(SearchForExpresion());
+                var result = ReadRepository.SearchFor(SearchForExpresion());
                 // ASSERT
                 BaseSearchForAsserts(result);
+            }
+            else
+            {
+                NoDataHandling();
             }
         }
 
         protected virtual void BaseGetAll()
         {
-            // ARRANGE            
-            // ACT
-            var result = Repository.GetAll();
-            // ASSERT
-            BaseGetAllAsserts(result);
+            if (TestData != null)
+            {
+                // ARRANGE            
+                // ACT
+                var result = ReadRepository.GetAll();
+                // ASSERT
+                BaseGetAllAsserts(result);
+            }
+            else
+            {
+                NoDataHandling();
+            }
         }
 
         protected virtual void BaseGetById()
         {
-            // ARRANGE            
-            // ACT
-            var result = Repository.GetById(GetObjectId());
-            // ASSERT
-            BaseGetByIdAsserts(result);
+            if (TestData != null)
+            {
+                // ARRANGE            
+                // ACT
+                var result = ReadRepository.GetById(GetObjectId());
+                // ASSERT
+                BaseGetByIdAsserts(result);
+            }
+            else
+            {
+                NoDataHandling();
+            }
         }
 
         protected virtual void BaseInsert()
@@ -149,20 +243,32 @@
             {
                 // ARRANGE            
                 // ACT
-                Repository.Insert(TestData);
-                var result = Repository.GetById(GetObjectId());
+                EditRepository.Insert(TestData);
+                var result = ReadRepository.GetById(GetObjectId());
                 // ASSERT
                 BaseInsertAsserts(result);
+            }
+            else
+            {
+                NoDataHandling();
             }
         }
 
         protected virtual void BaseDelete()
         {
-            // ARRANGE            
-            // ACT
-            Repository.Delete(TestData);
-            // ASSERT
-            BaseDeleteAsserts(TestData);
+            if (TestData != null)
+            {
+                // ARRANGE            
+                // ACT
+                EditRepository.Delete(TestData);
+                // ASSERT
+                BaseDeleteAsserts(TestData);
+            }
+            else
+            {
+                NoDataHandling();
+            }
         }
+        #endregion Virtual Test Methods
     }
 }
