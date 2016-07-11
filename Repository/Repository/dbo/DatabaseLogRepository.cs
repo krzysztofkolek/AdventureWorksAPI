@@ -3,9 +3,13 @@
     using EntityClasses.dbo;
     using Main;
 
-    public class DatabaseLogRepository<T> : BaseRepository<T>,  IRepository<T>, IEditableRepository<T>
+    public class DatabaseLogRepository<T> : BaseRepository<T>, IRepository<T>, IEditableRepository<T>
         where T : DatabaseLog, new()
     {
+        public DatabaseLogRepository()
+        {
+        }
+
         public System.Collections.Generic.IList<T> SearchFor(System.Linq.Expressions.Expression<System.Func<T, bool>> predicate)
         {
             return BaseSearchFor(predicate);

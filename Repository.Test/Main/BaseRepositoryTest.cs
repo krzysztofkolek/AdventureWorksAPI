@@ -25,6 +25,7 @@
 
         #region Properties
         protected T TestData;
+        protected dynamic Repository { get; set; }
         protected IRepository<T> ReadRepository { get; set; }
         protected IEditableRepository<T> EditRepository { get; set; }
         protected C Caller { get; set; }
@@ -66,13 +67,21 @@
             if (File.Exists(path))
             {
                 var typeItem = typeof(T);
+                var domainModelInstance = Activator.CreateInstance(typeItem);
+                var modelsFromRepositoryTestMOdels = Assembly.LoadFile(GetTestContext().TestDirectory + "/AdventureWorks.Repository.Test.Model.dll");
+                var modelFromAdventurworksRepositoryModels = modelsFromRepositoryTestMOdels.DefinedTypes
+                                                                          .Where(item => item.Name.Equals(typeItem.Name))
+                                                                          .First();
                 var xmlmanagerType = typeof(XMLManager<>)
-                                     .MakeGenericType(typeItem);
+                                                .MakeGenericType(modelFromAdventurworksRepositoryModels);
                 var instanceOfXMLManager = Activator.CreateInstance(xmlmanagerType);
                 MethodInfo deserializeMethodFromXMLManager = xmlmanagerType.GetMethod("Deserialize");
                 var deserializedObject = deserializeMethodFromXMLManager.Invoke(instanceOfXMLManager, new object[] { path });
 
-                TestData = deserializedObject as T;
+                PropertiesFiller filler = new PropertiesFiller();
+                var mainDeserializedObject = filler.DeserializeFromXMLModelToDomainModel(deserializedObject, domainModelInstance);
+
+                TestData = domainModelInstance as T;
             }
             else
             {
@@ -82,7 +91,7 @@
 
         public virtual String DataFileName()
         {
-            return String.Format("{0}.xml", typeof(C).Name.Replace("RepositoryTest", ""));
+            return String.Format("{0}.xml", typeof(C).Name.Replace("RepositoryTest", "").ToString());
         }
 
         public virtual String DataCategory()
@@ -113,18 +122,22 @@
 
         public virtual void BaseGetAllAsserts(IList<T> input)
         {
+            Assert.IsTrue(input.Count() > 1);
         }
 
         public virtual void BaseGetByIdAsserts(T input)
         {
+
         }
 
         public virtual void BaseInsertAsserts(T input)
         {
+
         }
 
         public virtual void BaseDeleteAsserts(T input)
         {
+
         }
 
         #endregion Virtual Methods
@@ -152,21 +165,12 @@
         [SetUp]
         public void Setup()
         {
-            var TestData = typeof(AdventureWorks.EntityClasses.dbo.DatabaseLog);
-            var assModel = Assembly.LoadFile(String.Format("{0}/AdventureWorks.Model.dll", GetTestContext().TestDirectory));
-            Type type = assModel.GetTypes().Where(item => item.Name.Equals(typeof(AdventureWorks.EntityClasses.dbo.DatabaseLog).Name)).First();
-            var constructorInfo = type.GetConstructor(new Type[] { });
-            dynamic instance = constructorInfo.Invoke(null);
-
             Type t = typeof(T);
-
             var assRepo = Assembly.LoadFile(String.Format("{0}/AdventureWorks.Repository.dll", GetTestContext().TestDirectory));
             var typeRepo = assRepo.GetTypes().Where(item => item.Name.StartsWith(t.Name)).First();
             typeRepo = typeRepo.MakeGenericType(new Type[] { t });
             var repoInstance = Activator.CreateInstance(typeRepo);
-
-            ReadRepository = repoInstance as IRepository<T>;
-            EditRepository = repoInstance as IEditableRepository<T>;
+            Repository = repoInstance;
         }
 
         /// <summary>
@@ -195,7 +199,7 @@
             {
                 // ARRANGE                
                 // ACT
-                var result = ReadRepository.SearchFor(SearchForExpresion());
+                var result = Repository.SearchFor(SearchForExpresion());
                 // ASSERT
                 BaseSearchForAsserts(result);
             }
@@ -211,7 +215,7 @@
             {
                 // ARRANGE            
                 // ACT
-                var result = ReadRepository.GetAll();
+                var result = Repository.GetAll();
                 // ASSERT
                 BaseGetAllAsserts(result);
             }
@@ -227,7 +231,7 @@
             {
                 // ARRANGE            
                 // ACT
-                var result = ReadRepository.GetById(GetObjectId());
+                var result = Repository.GetById(GetObjectId());
                 // ASSERT
                 BaseGetByIdAsserts(result);
             }
@@ -243,8 +247,8 @@
             {
                 // ARRANGE            
                 // ACT
-                EditRepository.Insert(TestData);
-                var result = ReadRepository.GetById(GetObjectId());
+                Repository.Insert(TestData);
+                var result = Repository.GetById(GetObjectId());
                 // ASSERT
                 BaseInsertAsserts(result);
             }
@@ -260,7 +264,7 @@
             {
                 // ARRANGE            
                 // ACT
-                EditRepository.Delete(TestData);
+                Repository.Delete(TestData);
                 // ASSERT
                 BaseDeleteAsserts(TestData);
             }

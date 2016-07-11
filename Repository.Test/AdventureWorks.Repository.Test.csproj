@@ -38,6 +38,19 @@
     <Reference Include="Autofac">
       <HintPath>..\packages\Autofac.3.5.2\lib\net40\Autofac.dll</HintPath>
     </Reference>
+    <Reference Include="FluentNHibernate, Version=2.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\FluentNHibernate.2.0.3.0\lib\net40\FluentNHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections, Version=4.0.0.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Iesi.Collections.4.0.1.4000\lib\net40\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="NHibernate, Version=4.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NHibernate.4.0.4.4000\lib\net40\NHibernate.dll</HintPath>
+    </Reference>
     <Reference Include="nunit.core">
       <HintPath>..\packages\NUnitTestAdapter.2.0.0\lib\nunit.core.dll</HintPath>
       <Private>False</Private>
@@ -155,6 +168,10 @@
     <Compile Include="Repository\Sales\StoreRepositoryTest.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AdventureWorks.Repository.Test.Model\AdventureWorks.Repository.Test.Model.csproj">
+      <Project>{aa21f62a-4cf1-45ca-8687-d9f46c963336}</Project>
+      <Name>AdventureWorks.Repository.Test.Model</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AdventureWorks.Utils\AdventureWorks.Utils.csproj">
       <Project>{a40ea110-3716-4e66-85bd-bed4ec3dbbbf}</Project>
       <Name>AdventureWorks.Utils</Name>
@@ -162,6 +179,10 @@
     <ProjectReference Include="..\Model\AdventureWorks.Model.csproj">
       <Project>{2b4644a3-c06d-4520-ad71-593676b79212}</Project>
       <Name>AdventureWorks.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Persistence\AdventureWorks.Persistence.csproj">
+      <Project>{499ea561-868e-4d48-84df-e0255c7bbb71}</Project>
+      <Name>AdventureWorks.Persistence</Name>
     </ProjectReference>
     <ProjectReference Include="..\Repository\AdventureWorks.Repository.csproj">
       <Project>{003dbc63-dda6-47f3-863e-73b040d7dba4}</Project>

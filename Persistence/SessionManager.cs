@@ -1,9 +1,10 @@
 ﻿namespace AdventureWorks
 {
-    using System;
     using FluentNHibernate.Cfg;
     using FluentNHibernate.Cfg.Db;
     using NHibernate;
+    using System;
+    using System.Configuration;
 
     /// <summary>
     ///     Small, simple session manager class which initializes NHibernate's session factory and loads the
@@ -13,7 +14,7 @@
     {
         #region Class Member Declarations
 
-        private static readonly ISessionFactory _sessionFactory;
+        private static ISessionFactory _sessionFactory;
 
         #endregion
 
@@ -41,7 +42,26 @@
         /// </remarks>
         public static ISession OpenSession()
         {
+            if (_sessionFactory == null)
+            {
+                BuildSessionFactory();
+            }
             return _sessionFactory.OpenSession();
+        }
+
+        public static void BuildSessionFactory()
+        {
+            try
+            {
+                _sessionFactory = Fluently.Configure()
+                    .Database(MsSqlConfiguration.MsSql2005
+                        .ConnectionString(@"Data Source=CYSPC\MSSQL2016;Initial Catalog=AdventureWorks;Integrated Security=True;TrustServerCertificate=False;TrustServerCertificate=False"))
+                    .Mappings(m => m.FluentMappings.AddFromAssembly(typeof(SessionManager).Assembly))
+                    .BuildSessionFactory();
+            }
+            catch (Exception ex)
+            {
+            }
         }
 
         #region Class Property Declarations
