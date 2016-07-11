@@ -8,20 +8,6 @@
     [Category("dbo")]
     public class AwbuildVersionRepositoryTest : BaseRepositoryTest<AwbuildVersion, AwbuildVersionRepositoryTest>
     {
-        public override string DataFileName()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public override string DataCategory()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public override int GetObjectId()
-        {
-            throw new System.NotImplementedException();
-        }
 
         public override System.Linq.Expressions.Expression<System.Func<AwbuildVersion, bool>> SearchForExpresion()
         {
@@ -35,35 +21,35 @@
 
         [Test]
         [Order(1)]
-        public void Insert()
+        public void AwbuildVersionRepositoryTest_Insert()
         {
             BaseInsert();
         }
 
         [Test]
         [Order(2)]
-        public void GetById()
+        public void AwbuildVersionRepositoryTest_GetById()
         {
             BaseGetById();
         }
 
         [Test]
         [Order(3)]
-        public void SearchFor()
+        public void AwbuildVersionRepositoryTest_SearchFor()
         {
             BaseSearchFor();
         }
 
         [Test]
         [Order(4)]
-        public void GetAll()
+        public void AwbuildVersionRepositoryTest_GetAll()
         {
             BaseGetAll();
         }
 
         [Test]
         [Order(5)]
-        public void Delete()
+        public void AwbuildVersionRepositoryTest_Delete()
         {
             BaseDelete();
         }

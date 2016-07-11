@@ -8,20 +8,6 @@
     [Category("Production")]
     public class CultureRepositoryTest : BaseRepositoryTest<Culture, CultureRepositoryTest>
     {
-        public override string DataFileName()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public override string DataCategory()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public override int GetObjectId()
-        {
-            throw new System.NotImplementedException();
-        }
 
         public override System.Linq.Expressions.Expression<System.Func<Culture, bool>> SearchForExpresion()
         {
@@ -31,6 +17,41 @@
         public override void BaseSearchForAsserts(System.Collections.Generic.IList<Culture> input)
         {
             throw new System.NotImplementedException();
+        }
+
+        [Test]
+        [Order(1)]
+        public void CultureRepositoryTest_Insert()
+        {
+            BaseInsert();
+        }
+
+        [Test]
+        [Order(2)]
+        public void CultureRepositoryTest_GetById()
+        {
+            BaseGetById();
+        }
+
+        [Test]
+        [Order(3)]
+        public void CultureRepositoryTest_SearchFor()
+        {
+            BaseSearchFor();
+        }
+
+        [Test]
+        [Order(4)]
+        public void CultureRepositoryTest_GetAll()
+        {
+            BaseGetAll();
+        }
+
+        [Test]
+        [Order(5)]
+        public void CultureRepositoryTest_Delete()
+        {
+            BaseDelete();
         }
     }
 }

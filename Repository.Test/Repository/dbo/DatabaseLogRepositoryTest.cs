@@ -6,9 +6,18 @@
 
 
     [TestFixture]
-    [Category("dbo")]
     public class DatabaseLogRepositoryTest : BaseRepositoryTest<DatabaseLog, DatabaseLogRepositoryTest>
     {
+
+        public override System.Linq.Expressions.Expression<System.Func<DatabaseLog, bool>> SearchForExpresion()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public override void BaseSearchForAsserts(System.Collections.Generic.IList<DatabaseLog> input)
+        {
+            throw new System.NotImplementedException();
+        }
 
         [Test]
         [Order(1)]
@@ -43,20 +52,6 @@
         public void DatabaseLogRepositoryTest_Delete()
         {
             BaseDelete();
-        }
-        public override TestContext GetTestContext()
-        {
-            return TestContext.CurrentContext;
-        }
-
-        public override System.Linq.Expressions.Expression<System.Func<DatabaseLog, bool>> SearchForExpresion()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public override void BaseSearchForAsserts(System.Collections.Generic.IList<DatabaseLog> input)
-        {
-            throw new System.NotImplementedException();
         }
     }
 }

@@ -8,20 +8,6 @@
     [Category("Person")]
     public class StateProvinceRepositoryTest : BaseRepositoryTest<StateProvince, StateProvinceRepositoryTest>
     {
-        public override string DataFileName()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public override string DataCategory()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public override int GetObjectId()
-        {
-            throw new System.NotImplementedException();
-        }
 
         public override System.Linq.Expressions.Expression<System.Func<StateProvince, bool>> SearchForExpresion()
         {
@@ -31,6 +17,41 @@
         public override void BaseSearchForAsserts(System.Collections.Generic.IList<StateProvince> input)
         {
             throw new System.NotImplementedException();
+        }
+
+        [Test]
+        [Order(1)]
+        public void StateProvinceRepositoryTest_Insert()
+        {
+            BaseInsert();
+        }
+
+        [Test]
+        [Order(2)]
+        public void StateProvinceRepositoryTest_GetById()
+        {
+            BaseGetById();
+        }
+
+        [Test]
+        [Order(3)]
+        public void StateProvinceRepositoryTest_SearchFor()
+        {
+            BaseSearchFor();
+        }
+
+        [Test]
+        [Order(4)]
+        public void StateProvinceRepositoryTest_GetAll()
+        {
+            BaseGetAll();
+        }
+
+        [Test]
+        [Order(5)]
+        public void StateProvinceRepositoryTest_Delete()
+        {
+            BaseDelete();
         }
     }
 }

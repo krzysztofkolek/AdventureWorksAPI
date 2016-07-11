@@ -106,6 +106,11 @@
             return SavedObjectId;
         }
 
+        private void NoDataHandling()
+        {
+            throw new InvalidOperationException();
+        }
+
         public virtual void BaseGetAllAsserts(IList<T> input)
         {
         }
@@ -125,11 +130,6 @@
         #endregion Virtual Methods
 
         #region Concreate Methods
-        private void NoDataHandling()
-        {
-            throw new InvalidOperationException();
-        }
-
         private void RestoreDatabase()
         {
             String file = String.Format("{0}\\Utils\\AdventureWorks2008.bak", GetTestContext().TestDirectory);
